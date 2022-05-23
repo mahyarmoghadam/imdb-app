@@ -3,12 +3,14 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome, FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorSchemeName, Pressable } from 'react-native';
+import { useRef } from 'react';
+import { ColorSchemeName, Dimensions, Pressable } from 'react-native';
+// import Animated, { useSharedValue } from 'react-native-reanimated';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -19,14 +21,30 @@ import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
+// const xOffsetValue = useSharedValue(0);
+
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
       theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <RootNavigator />
+
+      {/* <Animated.View style={{
+        width: getWidth(),
+        height: 2,
+        position: 'absolute',
+        bottom: 88,
+        left: 25,
+        backgroundColor: 'red',
+        borderRadius: 50
+      }}>
+
+      </Animated.View> */}
     </NavigationContainer>
   );
+
 }
 
 /**
@@ -37,13 +55,16 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
-      <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
-      <Stack.Group screenOptions={{ presentation: 'modal' }}>
-        <Stack.Screen name="Modal" component={ModalScreen} />
-      </Stack.Group>
-    </Stack.Navigator>
+    <>
+      <Stack.Navigator>
+        <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
+        <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+        <Stack.Group screenOptions={{ presentation: 'modal' }}>
+          <Stack.Screen name="Modal" component={ModalScreen} />
+        </Stack.Group>
+      </Stack.Navigator>
+
+    </>
   );
 }
 
@@ -61,14 +82,29 @@ function BottomTabNavigator() {
       initialRouteName="TabOne"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          marginHorizontal: 15,
+          borderRadius: 15,
+          height: 60,
+          position: 'absolute',
+          bottom: 30,
+          backgroundColor: '#fff',
+          shadowColor: '#000',
+          shadowOpacity: 0.06,
+          shadowOffset: {
+            width: 0,
+            height: 10
+          }
+        }
       }}
-      >
+    >
       <BottomTab.Screen
         name="TabOne"
         component={TabOneScreen}
         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+          title: 'Home',
+          tabBarIcon: ({ focused }) => <MaterialIcons name="home" size={30} color={focused ? 'red' : 'grey'} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Modal')}
@@ -86,29 +122,31 @@ function BottomTabNavigator() {
         })}
       />
       <BottomTab.Screen
-        name="Home2"
-        component={TabTwoScreen}
-        options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="wpexplorer" color={color} />,
-        }}
-      />
-      <BottomTab.Screen
         name="TabTwo"
         component={TabTwoScreen}
         options={{
           title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="search" color={color} />,
+          tabBarIcon: ({ focused }) => <MaterialIcons name="explore" size={30} color={focused ? 'red' : 'grey'} />,
         }}
       />
+      <BottomTab.Screen
+        name="Home2"
+        component={TabTwoScreen}
+        options={{
+          title: 'Tab Two',
+          tabBarIcon: ({ focused }) => <FontAwesome5 name="video" size={25} color={focused ? 'red' : 'grey'} />,
+        }}
+      />
+
       <BottomTab.Screen
         name="Home"
         component={TabTwoScreen}
         options={{
           title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="user-circle" color={color} />,
+          tabBarIcon: ({ focused }) => <FontAwesome5 name="user-alt" size={25} color={focused ? 'red' : 'grey'} />,
         }}
       />
+
 
     </BottomTab.Navigator>
   );
@@ -122,4 +160,10 @@ function TabBarIcon(props: {
   color: string;
 }) {
   return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
+}
+
+const getWidth = () => {
+  const width = Dimensions.get('window').width - 40;
+
+  return width / 4;
 }
