@@ -40,8 +40,8 @@ const styles = StyleSheet.create({
 
   imageContainer: {
     width: 175,
-    height: 115,
-    borderRadius: 10,
+    height: 125,
+    borderRadius: 15,
   },
 
   movieNameText: {
