@@ -1,9 +1,7 @@
 import { Block, Text } from "expo-ui-kit";
-import React from "react";
 import { StyleSheet, Image } from "react-native";
-import SearchComponent from "./SearchComponent";
 
-export default function HeaderComponent() {
+export default function SearchComponent() {
   return (
     <Block>
       <Block marginTop={20} style={styles.container} row>
@@ -22,7 +20,9 @@ export default function HeaderComponent() {
         </Block>
       </Block>
 
-      <SearchComponent />
+      <Block noflex>
+          
+      </Block>
     </Block>
   );
 }
