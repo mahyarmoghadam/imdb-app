@@ -1,27 +1,14 @@
+import { FontAwesome } from "@expo/vector-icons";
 import { Block, Text } from "expo-ui-kit";
-import { StyleSheet, Image } from "react-native";
+import React from "react";
+import { StyleSheet, Image, TextInput } from "react-native";
 
 export default function SearchComponent() {
   return (
     <Block>
-      <Block marginTop={20} style={styles.container} row>
-        <Block>
-          <Text size={24} weight={"600"} color={"#354259"}>
-            Hi, Emran
-          </Text>
-        </Block>
-        <Block style={styles.userPhotoContainer}>
-          <Image
-            style={styles.userPhoto}
-            source={{
-              uri: "https://i.picsum.photos/id/984/200/300.jpg?hmac=mLBN3lSvSl08Vh8Kw96TLY7v239gr1idtxVXvYFDkSc",
-            }}
-          />
-        </Block>
-      </Block>
-
-      <Block noflex>
-          
+      <Block style={styles.container} row>
+        <FontAwesome style={styles.searchIcon} color='#998396' size={25} name="search" />
+        <TextInput style={styles.searchContainer}  placeholder="search" placeholderTextColor='#998396'/>
       </Block>
     </Block>
   );
@@ -29,18 +16,27 @@ export default function SearchComponent() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    paddingHorizontal:20,
     justifyContent: "center",
     alignItems: "center",
   },
 
-  userPhotoContainer: {
-    alignItems: "flex-end",
+  searchContainer: {
+    paddingHorizontal: 50,
+    width: "100%",
+    height: 60,
+    borderRadius: 15,
+    backgroundColor:'#382c3e',
+    borderColor: "#000",
+    borderWidth: 1,
+    color:'#998396',
+    fontWeight:'600'
+    
   },
 
-  userPhoto: {
-    width: 50,
-    height: 50,
-    borderRadius: 50,
+  searchIcon: {
+    position: "absolute",
+    left: 35,
+    zIndex: 1,
   },
 });
