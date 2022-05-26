@@ -4,11 +4,13 @@ import { StyleSheet, Image } from "react-native";
 import SearchComponent from "./SearchComponent";
 
 export default function HeaderComponent() {
+
+  
   return (
     <Block>
       <Block marginTop={20} style={styles.container} row>
         <Block>
-          <Text size={24} weight={"600"} color={"#354259"}>
+          <Text size={24} weight={"600"} color='#aea8af'>
             Hi, Emran
           </Text>
         </Block>
@@ -39,8 +41,8 @@ const styles = StyleSheet.create({
   },
 
   userPhoto: {
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
     borderRadius: 50,
   },
 });
