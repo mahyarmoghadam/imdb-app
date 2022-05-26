@@ -3,6 +3,7 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import PopularComponent from "./PopularComponent";
 import GenresComponent from "./GenresComponent";
+import LegendaryMovieComponent from "./LegendaryMovieComponent";
 
 export default function BodyComponent() {
   return (
@@ -10,6 +11,8 @@ export default function BodyComponent() {
       <PopularComponent />
 
       <GenresComponent />
+
+      <LegendaryMovieComponent/>
     </Block>
   );
 }
