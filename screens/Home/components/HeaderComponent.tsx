@@ -1,6 +1,7 @@
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
+import Colors from "../../../models/constants/Colors";
 import SearchComponent from "./SearchComponent";
 
 export default function HeaderComponent() {
@@ -10,7 +11,7 @@ export default function HeaderComponent() {
     <Block>
       <Block marginTop={20} style={styles.container} row>
         <Block>
-          <Text size={24} weight={"600"} color='#aea8af'>
+          <Text size={24} weight={"600"} color={Colors.basicTextColor}>
             Hi, Emran
           </Text>
         </Block>

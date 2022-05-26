@@ -4,13 +4,11 @@ import React from "react";
 import { StyleSheet, Image, TextInput } from "react-native";
 
 export default function SearchComponent() {
-  return (
-    <Block>
+  return ( 
       <Block style={styles.container} row>
         <FontAwesome style={styles.searchIcon} color='#998396' size={25} name="search" />
         <TextInput style={styles.searchContainer}  placeholder="search" placeholderTextColor='#998396'/>
       </Block>
-    </Block>
   );
 }
 
