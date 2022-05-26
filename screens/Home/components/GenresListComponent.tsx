@@ -1,4 +1,3 @@
-import { AntDesign } from "@expo/vector-icons";
 import { Block, Text } from "expo-ui-kit";
 import { FlatList } from "native-base";
 import React from "react";
