@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 
   imageContainer: {
     width: 175,
-    height: 235,
+    height: 200,
     borderRadius: 20,
   },
 
