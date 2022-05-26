@@ -17,7 +17,7 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Home"
       screenOptions={{
         tabBarShowLabel: false,
         tabBarStyle: {
@@ -37,9 +37,9 @@ function BottomTabNavigator() {
       }}
     >
       <BottomTab.Screen
-        name="TabOne"
+        name="Home"
         component={HomeScreen}
-        options={({ navigation }: RootTabScreenProps<"TabOne">) => ({
+        options={({ navigation }: RootTabScreenProps<"Home">) => ({
           title: "Home",
           tabBarIcon: ({ focused }) => (
             <MaterialIcons
@@ -48,64 +48,8 @@ function BottomTabNavigator() {
               color={focused ? "red" : "grey"}
             />
           ),
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate("Modal")}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}
-            >
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
+          headerShown:false,
         })}
-      />
-      <BottomTab.Screen
-        name="TabTwo"
-        component={HomeScreen}
-        options={{
-          title: "Tab Two",
-          tabBarIcon: ({ focused }) => (
-            <MaterialIcons
-              name="explore"
-              size={30}
-              color={focused ? "red" : "grey"}
-            />
-          ),
-        }}
-      />
-      <BottomTab.Screen
-        name="Home2"
-        component={HomeScreen}
-        options={{
-          title: "Tab Two",
-          tabBarIcon: ({ focused }) => (
-            <FontAwesome5
-              name="video"
-              size={25}
-              color={focused ? "red" : "grey"}
-            />
-          ),
-        }}
-      />
-
-      <BottomTab.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          title: "Tab Two",
-          tabBarIcon: ({ focused }) => (
-            <FontAwesome5
-              name="user-alt"
-              size={25}
-              color={focused ? "red" : "grey"}
-            />
-          ),
-        }}
       />
     </BottomTab.Navigator>
   );
