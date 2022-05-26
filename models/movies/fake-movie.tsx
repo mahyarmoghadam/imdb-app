@@ -29,7 +29,7 @@ const fakeMovieList = [
     },
     movieName: "cruella",
     releaseYear: 2021,
-    rate: 7.3
+    rate: 7.3,
   },
   {
     image: {
@@ -41,4 +41,37 @@ const fakeMovieList = [
   },
 ];
 
-export { fakeMovieList };
+const fakeGenres = [
+  {
+    image: {
+      url: "https://m.media-amazon.com/images/M/MV5BMjE4NjY2MzU3Nl5BMl5BanBnXkFtZTgwOTU1NDYwNjE@._V1_.jpg",
+    },
+    name : 'History'
+  },
+  {
+    image: {
+      url: "https://www.gannett-cdn.com/-mm-/b056fc522ffd018041f93c8eed9e3f26e040292a/c=5-0-2122-1196/local/-/media/2016/09/16/USATODAY/USATODAY/636096390938383380-XXX-IMG-CONJURING-2-1-1-OCEKAJT1-82468166.JPG?width=660&height=373&fit=crop&format=pjpg&auto=webp",
+    },
+    name : 'Horror'
+  },
+  {
+    image: {
+      url: "https://www.moving-stories.net/wp-content/uploads/2021/06/80saction1.jpg",
+    },
+    name : 'Action'
+  },
+  {
+    image: {
+      url: "https://i.guim.co.uk/img/media/28e8d6f6407232ecf5a056afb064c35f225b2419/0_102_1760_1056/master/1760.jpg?width=465&quality=45&auto=format&fit=max&dpr=2&s=153b5e448e81119ebdb2a39b01030b6c",
+    },
+    name : 'Drama'
+  },
+  {
+    image: {
+      url: "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQVEvxt_DCAAap_OLq6_6mKLItc6ptoVNE50ymq5hbu9nK69nhu8m6TluuvYsnkroQyJ6AMi09BCNxGzSIMoKVzoKgBSuKZ__gPYY5CEg5ZBrABzaya5_nwLE0-C6z5kMbKgirB2ROmXxpRyY2Zw8PuLI.jpg?r=3cf",
+    },
+    name : 'Fantasy'
+  },
+];
+
+export { fakeMovieList , fakeGenres};
