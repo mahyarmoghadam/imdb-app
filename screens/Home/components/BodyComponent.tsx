@@ -4,6 +4,7 @@ import { StyleSheet } from "react-native";
 import PopularComponent from "./PopularComponent";
 import GenresComponent from "./GenresComponent";
 import LegendaryMovieComponent from "./LegendaryMovieComponent";
+import CastAndCrewComponent from "./CastAndCrewComponent";
 
 export default function BodyComponent() {
   return (
@@ -13,6 +14,8 @@ export default function BodyComponent() {
       <GenresComponent />
 
       <LegendaryMovieComponent/>
+
+      <CastAndCrewComponent/>
     </Block>
   );
 }
