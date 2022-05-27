@@ -7,12 +7,18 @@ import { fakeCast } from "../../../../models/movies/fake-movie";
 export default function MovieCastComponent() {
   const renderContent = ({ item }: any) => {
     return (
-      <Block  style={styles.container}>
+      <Block style={styles.container}>
         <Block>
           <Image style={styles.imageContainer} source={item.image} />
-          <Text size={12} weight={'600'} paddingVertical={10} color={Colors.basicTextColor}>{item.name}</Text>
+          <Text
+            size={12}
+            weight={"600"}
+            paddingVertical={10}
+            color={Colors.basicTextColor}
+          >
+            {item.name}
+          </Text>
         </Block>
-
       </Block>
     );
   };
@@ -37,10 +43,9 @@ export default function MovieCastComponent() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 5,
+    paddingRight: 15,
     paddingVertical: 20,
     backgroundColor: "#201921",
-    marginBottom: 100,
   },
 
   imageContainer: {
