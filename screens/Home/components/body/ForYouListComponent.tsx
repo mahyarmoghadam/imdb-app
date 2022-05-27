@@ -63,8 +63,4 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     paddingTop: 10,
   },
-
-  releaseYearText: {
-    fontWeight: "600",
-  },
 });

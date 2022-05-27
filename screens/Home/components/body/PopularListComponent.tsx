@@ -4,7 +4,7 @@ import { Block, Text } from "expo-ui-kit";
 import { FlatList } from "native-base";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-import { TouchableOpacity, TouchableWithoutFeedback } from "react-native-gesture-handler";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import Colors from "../../../../models/constants/Colors";
 import { fakeMovieList } from "../../../../models/movies/fake-movie";
 import { RootStackParamList } from "../../../../types";
