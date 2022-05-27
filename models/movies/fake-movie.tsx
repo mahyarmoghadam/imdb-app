@@ -1,11 +1,11 @@
 const fakeMovieList = [
   {
     image: {
-      url: "https://upload.wikimedia.org/wikipedia/en/7/74/Shang-Chi_and_the_Legend_of_the_Ten_Rings_poster.jpeg",
+      url: "https://upload.wikimedia.org/wikipedia/en/1/1c/Free_Guy_2021_Poster.jpg",
     },
-    movieName: "Shang Chi",
+    movieName: "Free Guy",
     releaseYear: 2021,
-    rate: 7.8,
+    rate: 7.1,
   },
   {
     image: {
@@ -17,11 +17,11 @@ const fakeMovieList = [
   },
   {
     image: {
-      url: "https://upload.wikimedia.org/wikipedia/en/1/1c/Free_Guy_2021_Poster.jpg",
+      url: "https://upload.wikimedia.org/wikipedia/en/7/74/Shang-Chi_and_the_Legend_of_the_Ten_Rings_poster.jpeg",
     },
-    movieName: "Free Guy",
+    movieName: "Shang Chi",
     releaseYear: 2021,
-    rate: 7.1,
+    rate: 7.8,
   },
   {
     image: {
@@ -107,4 +107,12 @@ const fakeCast = [
   },
 ];
 
-export { fakeMovieList, fakeGenres, fakeCast };
+const fakeForYou = [
+  {
+    image: {
+      url: "https://zayzay.com/wp-content/uploads/2021/05/Cruella-pics-1.jpg",
+    },
+  },
+];
+
+export { fakeMovieList, fakeGenres, fakeCast, fakeForYou };
