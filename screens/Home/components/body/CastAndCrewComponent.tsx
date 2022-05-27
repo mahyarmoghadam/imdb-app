@@ -24,6 +24,6 @@ export default function CastAndCrewComponent() {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    marginBottom:70
+    marginBottom: 70,
   },
 });

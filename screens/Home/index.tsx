@@ -8,7 +8,6 @@ import HeaderComponent from "./components/header/HeaderComponent";
 export default function HomeScreen() {
   return (
     <Block scroll style={styles.container}>
-     
       <HeaderComponent />
 
       <BodyComponent />

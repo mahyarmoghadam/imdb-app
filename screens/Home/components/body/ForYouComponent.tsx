@@ -12,7 +12,6 @@ export default function ForYouComponent() {
         <Text size={18} color={Colors.basicTextColor}>
           For You
         </Text>
-       
       </Block>
 
       <ForYouListComponent />
@@ -23,6 +22,6 @@ export default function ForYouComponent() {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    height:Layout.window.height / 1.9
+    height: Layout.window.height / 1.9,
   },
 });

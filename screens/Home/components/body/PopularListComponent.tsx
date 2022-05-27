@@ -60,6 +60,6 @@ const styles = StyleSheet.create({
   },
 
   releaseYearText: {
-    fontWeight: '600',
+    fontWeight: "600",
   },
 });

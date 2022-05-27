@@ -11,7 +11,6 @@ export default function CastAndCrewListComponent() {
         <Block>
           <Image style={styles.imageContainer} source={item.image} />
         </Block>
-    
       </Block>
     );
   };

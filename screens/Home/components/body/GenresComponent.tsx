@@ -23,6 +23,6 @@ export default function GenresComponent() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20
+    padding: 20,
   },
 });

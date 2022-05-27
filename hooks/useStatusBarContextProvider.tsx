@@ -16,14 +16,14 @@ export const StatusBarContext = createContext<StatusBarContextProps>({
 });
 
 export default function StatusBarContextProvider({
-    children
-}: StatusBarContextProviderProps){
-    const [statusBarStyle, setStatusBarStyle] = useState<StatusBarStyle>('light');
+  children,
+}: StatusBarContextProviderProps) {
+  const [statusBarStyle, setStatusBarStyle] = useState<StatusBarStyle>("light");
 
-    return (
-        <StatusBarContext.Provider value={{statusBarStyle , setStatusBarStyle}}>
-            <StatusBar style={statusBarStyle ?? 'light'} />
-            {children}
-        </StatusBarContext.Provider>
-    )
-};
+  return (
+    <StatusBarContext.Provider value={{ statusBarStyle, setStatusBarStyle }}>
+      <StatusBar style={statusBarStyle ?? "light"} />
+      {children}
+    </StatusBarContext.Provider>
+  );
+}
