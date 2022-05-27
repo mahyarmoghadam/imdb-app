@@ -4,6 +4,7 @@ import { StyleSheet } from "react-native";
 import Colors from "../../../../models/constants/Colors";
 import TagComponent from "../../../Shared/components/TagComponent";
 import MovieCastComponent from "./MovieCastComponent";
+import MovieCommentComponent from "./MovieCommentComponent";
 import MovieTrailerComponent from "./MovieTrailerComponent";
 
 export default function MovieDetailComponent() {
@@ -30,6 +31,8 @@ export default function MovieDetailComponent() {
       <MovieCastComponent />
 
       <MovieTrailerComponent />
+
+      <MovieCommentComponent />
     </Block>
   );
 }

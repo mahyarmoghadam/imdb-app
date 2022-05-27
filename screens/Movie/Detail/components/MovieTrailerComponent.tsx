@@ -26,17 +26,14 @@ export default function MovieTrailerComponent() {
 
 const styles = StyleSheet.create({
   container: {
-
     paddingVertical: 5,
     backgroundColor: "#201921",
-    marginBottom: 100,
-    
   },
 
   imageContainer: {
     width: "100%",
     height: 200,
-    borderRadius:10,
-    paddingVertical:10
+    borderRadius: 10,
+    paddingVertical: 10,
   },
 });
