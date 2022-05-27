@@ -2,8 +2,8 @@ import { Block, Text } from "expo-ui-kit";
 import { FlatList } from "native-base";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-import Colors from "../../../models/constants/Colors";
-import { fakeGenres } from "../../../models/movies/fake-movie";
+import Colors from "../../../../models/constants/Colors";
+import { fakeGenres } from "../../../../models/movies/fake-movie";
 
 export default function GenresListComponent() {
   const renderContent = ({ item }: any) => {

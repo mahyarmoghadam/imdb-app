@@ -2,8 +2,7 @@ import { Block, Text } from "expo-ui-kit";
 import { FlatList } from "native-base";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-import Colors from "../../../models/constants/Colors";
-import { fakeCast, fakeGenres } from "../../../models/movies/fake-movie";
+import { fakeCast } from "../../../../models/movies/fake-movie";
 
 export default function CastAndCrewListComponent() {
   const renderContent = ({ item }: any) => {

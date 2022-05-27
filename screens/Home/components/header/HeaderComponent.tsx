@@ -1,7 +1,7 @@
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-import Colors from "../../../models/constants/Colors";
+import Colors from "../../../../models/constants/Colors";
 import SearchComponent from "./SearchComponent";
 
 export default function HeaderComponent() {

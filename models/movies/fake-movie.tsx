@@ -27,7 +27,7 @@ const fakeMovieList = [
     image: {
       url: "https://upload.wikimedia.org/wikipedia/en/f/f6/Cruella_2021_film_poster.jpg",
     },
-    movieName: "cruella",
+    movieName: "Cruella",
     releaseYear: 2021,
     rate: 7.3,
   },
