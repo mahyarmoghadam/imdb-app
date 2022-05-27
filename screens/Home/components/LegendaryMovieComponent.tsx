@@ -24,6 +24,5 @@ export default function LegendaryMovieComponent() {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    marginBottom:70
   },
 });
