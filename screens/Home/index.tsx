@@ -1,8 +1,8 @@
 import { Block } from "expo-ui-kit";
 import React from "react";
 import { StyleSheet, Text } from "react-native";
-import BodyComponent from "./components/BodyComponent";
-import HeaderComponent from "./components/HeaderComponent";
+import BodyComponent from "./components/body/BodyComponent";
+import HeaderComponent from "./components/header/HeaderComponent";
 
 export default function HomeScreen() {
   return (

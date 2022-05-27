@@ -3,8 +3,8 @@ import { Block, Text } from "expo-ui-kit";
 import { FlatList } from "native-base";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-import Colors from "../../../models/constants/Colors";
-import { fakeMovieList } from "../../../models/movies/fake-movie";
+import Colors from "../../../../models/constants/Colors";
+import { fakeMovieList } from "../../../../models/movies/fake-movie";
 
 export default function PopularListComponent() {
   const renderContent = ({ item }: any) => {

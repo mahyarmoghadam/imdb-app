@@ -1,7 +1,7 @@
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
 import { StyleSheet } from "react-native";
-import Colors from "../../../models/constants/Colors";
+import Colors from "../../../../models/constants/Colors";
 import GenresListComponent from "./GenresListComponent";
 
 export default function GenresComponent() {
