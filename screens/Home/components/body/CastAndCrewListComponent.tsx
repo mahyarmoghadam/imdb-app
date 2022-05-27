@@ -1,4 +1,4 @@
-import { Block, Text } from "expo-ui-kit";
+import { Block } from "expo-ui-kit";
 import { FlatList } from "native-base";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
@@ -35,14 +35,5 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 50,
-  },
-
-  movieNameText: {
-    fontWeight: "800",
-    paddingTop: 10,
-  },
-
-  releaseYearText: {
-    fontWeight: "600",
   },
 });
