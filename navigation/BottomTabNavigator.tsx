@@ -10,6 +10,7 @@ import React from "react";
 import { Pressable, useColorScheme } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import HomeScreen from "../screens/Home";
+import MovieDetailScreen from "../screens/Movie/Detail";
 import { RootTabParamList, RootTabScreenProps } from "../types";
 
 /**
@@ -62,7 +63,7 @@ function BottomTabNavigator() {
 
       <BottomTab.Screen
         name="Explore"
-        component={HomeScreen}
+        component={MovieDetailScreen}
         options={({ navigation }: RootTabScreenProps<"Explore">) => ({
           title: "Home",
           tabBarIcon: ({ focused }) => (

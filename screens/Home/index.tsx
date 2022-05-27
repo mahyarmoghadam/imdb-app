@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import { Block } from "expo-ui-kit";
 import React from "react";
 import { StyleSheet, Text } from "react-native";
