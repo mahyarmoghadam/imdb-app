@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
   container: {
     paddingRight: 15,
     paddingVertical: 20,
-    backgroundColor: "#201921",
-    marginBottom: 100,
+    backgroundColor: "#201921"
   },
 });
