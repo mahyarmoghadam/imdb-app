@@ -5,17 +5,20 @@ import GenresComponent from "./GenresComponent";
 import LegendaryMovieComponent from "./LegendaryMovieComponent";
 import CastAndCrewComponent from "./CastAndCrewComponent";
 import PopularComponent from "./PopularComponent";
+import ForYouComponent from "./ForYouComponent";
 
 export default function BodyComponent() {
   return (
     <Block>
+      <ForYouComponent />
+
       <PopularComponent />
 
       <GenresComponent />
 
-      <LegendaryMovieComponent/>
+      <LegendaryMovieComponent />
 
-      <CastAndCrewComponent/>
+      <CastAndCrewComponent />
     </Block>
   );
 }
