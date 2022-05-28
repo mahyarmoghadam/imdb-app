@@ -11,6 +11,7 @@ import { Pressable, useColorScheme } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import HomeScreen from "../screens/Home";
 import MovieDetailScreen from "../screens/Movie/Detail";
+import ProfileScreen from "../screens/Profile";
 import { RootTabParamList, RootTabScreenProps } from "../types";
 
 /**
@@ -95,7 +96,7 @@ function BottomTabNavigator() {
 
       <BottomTab.Screen
         name="Profile"
-        component={HomeScreen}
+        component={ProfileScreen}
         options={({ navigation }: RootTabScreenProps<"Profile">) => ({
           title: "Home",
           tabBarIcon: ({ focused }) => (
