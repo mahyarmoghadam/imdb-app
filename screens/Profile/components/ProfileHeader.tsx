@@ -1,7 +1,7 @@
-import { AntDesign, FontAwesome } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
-import { FlatList, StyleSheet, Image } from "react-native";
+import { StyleSheet, Image } from "react-native";
 import Colors from "../../../models/constants/Colors";
 
 export default function ProfileHeaderComponent() {
@@ -38,10 +38,6 @@ export default function ProfileHeaderComponent() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-  },
-
   imageContainer: {
     width: 100,
     height: 100,
