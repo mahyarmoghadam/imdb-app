@@ -13,7 +13,7 @@ export default function ProfileHeaderActivityComponent() {
           <Image style={styles.imageContainer} source={item.image} />
         </Block>
         <Block paddingHorizontal={10}>
-          <Text weight={'800'} paddingTop={5} color={Colors.secondaryTextColor}>
+          <Text weight={'700'} paddingTop={5} color={Colors.secondaryTextColor}>
             {item.text}
           </Text>
           <Text paddingBottom={10} size={13} color={Colors.basicTextColor}>
