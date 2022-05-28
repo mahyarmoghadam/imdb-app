@@ -1,7 +1,7 @@
 import { Block } from "expo-ui-kit";
 import React from "react";
 import { StyleSheet } from "react-native";
-import ProfileHeaderComponent from "./components/ProfileHeader";
+import ProfileHeaderComponent from "./components/ProfileHeader/ProfileHeaderComponent";
 
 export default function ProfileScreen() {
   return (
@@ -10,7 +10,3 @@ export default function ProfileScreen() {
     </Block>
   );
 }
-
-const styles = StyleSheet.create({
-
-});
