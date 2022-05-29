@@ -1,28 +1,21 @@
-import { Block } from 'expo-ui-kit';
-import { StyleSheet, Text } from 'react-native';
-
+import { Block } from "expo-ui-kit";
+import React from "react";
+import { StyleSheet, Text } from "react-native";
+import BodyComponent from "./components/body/BodyComponent";
+import HeaderComponent from "./components/header/HeaderComponent";
 
 export default function HomeScreen() {
-    return (
-        <Block>
-            <Text>Hello</Text>
-        </Block>
-    );
+  return (
+    <Block scroll style={styles.container}>
+      <HeaderComponent />
+
+      <BodyComponent />
+    </Block>
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    title: {
-        fontSize: 20,
-        fontWeight: 'bold',
-    },
-    separator: {
-        marginVertical: 30,
-        height: 1,
-        width: '80%',
-    },
+  container: {
+    backgroundColor: "#140f14",
+  },
 });

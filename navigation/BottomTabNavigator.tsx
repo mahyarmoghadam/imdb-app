@@ -1,4 +1,10 @@
-import { MaterialIcons, FontAwesome, FontAwesome5 } from "@expo/vector-icons";
+import {
+  MaterialIcons,
+  FontAwesome,
+  FontAwesome5,
+  Octicons,
+  Feather,
+} from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { Pressable, useColorScheme } from "react-native";
@@ -17,7 +23,7 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Home"
       screenOptions={{
         tabBarShowLabel: false,
         tabBarStyle: {
@@ -26,7 +32,9 @@ function BottomTabNavigator() {
           height: 60,
           position: "absolute",
           bottom: 30,
-          backgroundColor: "#fff",
+          borderColor: "#4c3441",
+          borderWidth: 1,
+          backgroundColor: "#4c3441",
           shadowColor: "#000",
           shadowOpacity: 0.06,
           shadowOffset: {
@@ -37,79 +45,70 @@ function BottomTabNavigator() {
       }}
     >
       <BottomTab.Screen
-        name="TabOne"
+        name="Home"
         component={HomeScreen}
-        options={({ navigation }: RootTabScreenProps<"TabOne">) => ({
+        options={({ navigation }: RootTabScreenProps<"Home">) => ({
           title: "Home",
           tabBarIcon: ({ focused }) => (
-            <MaterialIcons
+            <Octicons
               name="home"
-              size={30}
-              color={focused ? "red" : "grey"}
+              size={22}
+              color={focused ? "#bc9d89" : "grey"}
             />
           ),
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate("Modal")}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}
-            >
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
+          headerShown: false,
         })}
-      />
-      <BottomTab.Screen
-        name="TabTwo"
-        component={HomeScreen}
-        options={{
-          title: "Tab Two",
-          tabBarIcon: ({ focused }) => (
-            <MaterialIcons
-              name="explore"
-              size={30}
-              color={focused ? "red" : "grey"}
-            />
-          ),
-        }}
-      />
-      <BottomTab.Screen
-        name="Home2"
-        component={HomeScreen}
-        options={{
-          title: "Tab Two",
-          tabBarIcon: ({ focused }) => (
-            <FontAwesome5
-              name="video"
-              size={25}
-              color={focused ? "red" : "grey"}
-            />
-          ),
-        }}
       />
 
       <BottomTab.Screen
-        name="Home"
+        name="Explore"
         component={HomeScreen}
-        options={{
-          title: "Tab Two",
+        options={({ navigation }: RootTabScreenProps<"Explore">) => ({
+          title: "Home",
           tabBarIcon: ({ focused }) => (
-            <FontAwesome5
-              name="user-alt"
+            <MaterialIcons
+              name="explore"
               size={25}
-              color={focused ? "red" : "grey"}
+              color={focused ? "#bc9d89" : "grey"}
             />
           ),
-        }}
+          headerShown: false,
+        })}
+      />
+
+      <BottomTab.Screen
+        name="Video"
+        component={HomeScreen}
+        options={({ navigation }: RootTabScreenProps<"Video">) => ({
+          title: "Home",
+          tabBarIcon: ({ focused }) => (
+            <Feather
+              name="video"
+              size={22}
+              color={focused ? "#bc9d89" : "grey"}
+            />
+          ),
+          headerShown: false,
+        })}
+      />
+
+      <BottomTab.Screen
+        name="Profile"
+        component={HomeScreen}
+        options={({ navigation }: RootTabScreenProps<"Profile">) => ({
+          title: "Home",
+          tabBarIcon: ({ focused }) => (
+            <Feather
+              name="user"
+              size={22}
+              color={focused ? "#bc9d89" : "grey"}
+            />
+          ),
+          headerShown: false,
+        })}
       />
     </BottomTab.Navigator>
   );
 }
 
-
-export {BottomTabNavigator};
+export { BottomTabNavigator };

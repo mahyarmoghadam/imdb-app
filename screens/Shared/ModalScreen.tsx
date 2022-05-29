@@ -1,11 +1,11 @@
-import { StatusBar } from "expo-status-bar";
-import { Platform, StyleSheet } from "react-native";
-import { Block, Text } from "expo-ui-kit";
+import { StatusBar } from 'expo-status-bar';
+import { Block, Text } from 'expo-ui-kit';
+import { Platform, StyleSheet } from 'react-native';
 
 export default function ModalScreen() {
   return (
-    <Block style={styles.container}>
-      <Text>test</Text>
+    <Block>
+      <Text>Modal Screen Sample ...</Text>
     </Block>
   );
 }
