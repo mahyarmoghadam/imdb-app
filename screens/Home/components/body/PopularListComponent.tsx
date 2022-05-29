@@ -1,30 +1,31 @@
+import React from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { Block, Text } from "expo-ui-kit";
 import { FlatList } from "native-base";
-import React from "react";
 import { StyleSheet, Image } from "react-native";
-import Colors from "../../../../models/constants/Colors";
-import { fakeMovieList } from "../../../../models/movies/fake-movie";
+import { useTheme } from "@hooks";
+import { fakeMovieList } from "@fake-datas";
 
 export default function PopularListComponent() {
+  const theme = useTheme();
   const renderContent = ({ item }: any) => {
     return (
-      <Block style={styles.container}>
+      <Block paddingVertical={20} paddingRight={20}>
         <Block>
           <Image style={styles.imageContainer} source={item.image} />
         </Block>
         <Block row space="between">
-          <Text style={styles.movieNameText} color={Colors.secondaryTextColor}>
+          <Text style={styles.movieNameText} color={theme.secondaryTextColor}>
             {item.movieName}
           </Text>
-          <Text style={styles.movieNameText} color={Colors.secondaryTextColor}>
+          <Text style={styles.movieNameText} color={theme.secondaryTextColor}>
             {item.rate}
             <AntDesign name="star" size={18} color="#dbb28c" />
           </Text>
         </Block>
 
         <Block>
-          <Text style={styles.releaseYearText} color={Colors.basicTextColor}>
+          <Text style={styles.releaseYearText} color={theme.textColor}>
             {item.releaseYear}
           </Text>
         </Block>
@@ -43,11 +44,6 @@ export default function PopularListComponent() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingVertical: 20,
-    paddingRight: 20,
-  },
-
   imageContainer: {
     width: 175,
     height: 200,
@@ -60,6 +56,6 @@ const styles = StyleSheet.create({
   },
 
   releaseYearText: {
-    fontWeight: '600',
+    fontWeight: "600",
   },
 });

@@ -1,17 +1,19 @@
-import { Block, Text } from "expo-ui-kit";
 import React from "react";
+import { PopularListComponent } from "@home-components";
+import { useTheme } from "@hooks";
+import { Block, Text } from "expo-ui-kit";
 import { StyleSheet } from "react-native";
-import Colors from "../../../../models/constants/Colors";
-import PopularListComponent from "./PopularListComponent";
 
 export default function LegendaryMovieComponent() {
+  const theme = useTheme();
+
   return (
     <Block style={styles.container}>
       <Block row space="between">
-        <Text size={18} color={Colors.basicTextColor}>
+        <Text size={18} color={theme.textColor}>
           Legendary Movies
         </Text>
-        <Text size={16} color={Colors.basicLinkColor}>
+        <Text size={16} color={theme.linkColor}>
           See all
         </Text>
       </Block>

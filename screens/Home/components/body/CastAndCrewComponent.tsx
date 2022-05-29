@@ -1,17 +1,18 @@
-import { Block, Text } from "expo-ui-kit";
 import React from "react";
-import { StyleSheet } from "react-native";
-import Colors from "../../../../models/constants/Colors";
-import CastAndCrewListComponent from "./CastAndCrewListComponent";
+import { Block, Text } from "expo-ui-kit";
+import { useTheme } from "@hooks";
+import { CastAndCrewListComponent } from "@home-components";
 
 export default function CastAndCrewComponent() {
+  const theme = useTheme();
+
   return (
-    <Block style={styles.container}>
+    <Block padding={20} marginBottom={70}>
       <Block row space="between">
-        <Text size={18} color={Colors.basicTextColor}>
+        <Text size={18} color={theme.textColor}>
           Cast & Crew
         </Text>
-        <Text size={16} color={Colors.basicLinkColor}>
+        <Text size={16} color={theme.linkColor}>
           See all
         </Text>
       </Block>
@@ -20,10 +21,3 @@ export default function CastAndCrewComponent() {
     </Block>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    marginBottom:70
-  },
-});

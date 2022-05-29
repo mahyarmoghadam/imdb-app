@@ -1,17 +1,17 @@
+import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-import Colors from "../../../../models/constants/Colors";
 import SearchComponent from "./SearchComponent";
 
 export default function HeaderComponent() {
+  const theme = useTheme();
 
-  
   return (
     <Block>
       <Block marginTop={20} style={styles.container} row>
         <Block>
-          <Text size={24} weight={"600"} color={Colors.basicTextColor}>
+          <Text size={24} weight={"600"} color={theme.textColor}>
             Hi, Emran
           </Text>
         </Block>

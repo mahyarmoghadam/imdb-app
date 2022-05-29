@@ -1,6 +1,14 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@constants": ["./models/constants/index"],
+      "@hooks": ["./hooks/index"],
+      "@fake-datas": ["./models/movies/index"],
+      "@home-components": ["./screens/Home/components/index"],
+      "@helpers": ["./helpers/*"]
+    }
   }
 }
