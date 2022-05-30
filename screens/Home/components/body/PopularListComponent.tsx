@@ -1,18 +1,17 @@
+import React from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { Block, Text } from "expo-ui-kit";
 import { FlatList } from "native-base";
-import React from "react";
 import { StyleSheet, Image } from "react-native";
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
-import Colors from "../../../../models/constants/Colors";
-import { fakeMovieList } from "../../../../models/movies/fake-movie";
-import { RootStackParamList } from "../../../../types";
+import { useTheme } from "@hooks";
+import { fakeMovieList } from "@fake-datas";
 
 export default function PopularListComponent() {
   const navigation =
     useNavigation<NavigationProp<RootStackParamList, "Main">>();
 
+  const theme = useTheme();
   const renderContent = ({ item }: any) => {
     return (
       <TouchableWithoutFeedback onPress={() => navigation.navigate("MovieDetail")}>
@@ -57,11 +56,6 @@ export default function PopularListComponent() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingVertical: 20,
-    paddingRight: 20,
-  },
-
   imageContainer: {
     width: 175,
     height: 200,

@@ -1,8 +1,8 @@
-import { Block } from "expo-ui-kit";
+import { Block, Text } from "expo-ui-kit";
+import { fakeCast } from "@fake-datas";
 import { FlatList } from "native-base";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-import { fakeCast } from "../../../../models/movies/fake-movie";
 
 export default function CastAndCrewListComponent() {
   const renderContent = ({ item }: any) => {

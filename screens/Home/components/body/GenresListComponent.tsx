@@ -1,19 +1,20 @@
+import React from "react";
+import { fakeGenres } from "@fake-datas";
+import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import { FlatList } from "native-base";
-import React from "react";
 import { StyleSheet, Image } from "react-native";
-import Colors from "../../../../models/constants/Colors";
-import { fakeGenres } from "../../../../models/movies/fake-movie";
 
 export default function GenresListComponent() {
+  const theme = useTheme();
   const renderContent = ({ item }: any) => {
     return (
-      <Block style={styles.container}>
+      <Block paddingHorizontal={20} paddingRight={20}>
         <Block>
           <Image style={styles.imageContainer} source={item.image} />
         </Block>
         <Block row space="between">
-          <Text style={styles.movieNameText} color={Colors.secondaryTextColor}>
+          <Text weight="800" paddingRight={10} color={theme.secondaryTextColor}>
             {item.name}
           </Text>
         </Block>
@@ -32,11 +33,6 @@ export default function GenresListComponent() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingVertical: 20,
-    paddingRight: 20,
-  },
-
   imageContainer: {
     width: 175,
     height: 125,
@@ -46,9 +42,5 @@ const styles = StyleSheet.create({
   movieNameText: {
     fontWeight: "800",
     paddingTop: 10,
-  },
-
-  releaseYearText: {
-    fontWeight: "600",
   },
 });

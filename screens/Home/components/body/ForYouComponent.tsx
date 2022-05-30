@@ -1,15 +1,16 @@
-import { Block, Text } from "expo-ui-kit";
 import React from "react";
-import { StyleSheet } from "react-native";
-import Colors from "../../../../models/constants/Colors";
-import ForYouListComponent from "./ForYouListComponent";
-import Layout from "../../../../models/constants/Layout";
+import { Block, Text } from "expo-ui-kit";
+import { useTheme } from "@hooks";
+import { Layout } from "@constants";
+import { ForYouListComponent } from "@home-components";
 
 export default function ForYouComponent() {
+  const theme = useTheme();
+
   return (
-    <Block style={styles.container}>
+    <Block padding={20} height={Layout.window.height / 1.9}>
       <Block row space="between">
-        <Text size={18} color={Colors.basicTextColor}>
+        <Text size={18} color={theme.textColor}>
           For You
         </Text>
       </Block>
@@ -18,10 +19,3 @@ export default function ForYouComponent() {
     </Block>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    height: Layout.window.height / 1.9,
-  },
-});
