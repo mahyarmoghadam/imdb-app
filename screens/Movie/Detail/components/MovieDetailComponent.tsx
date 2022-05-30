@@ -1,15 +1,16 @@
+import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
-import { StyleSheet } from "react-native";
-import Colors from "../../../../models/constants/Colors";
 import TagComponent from "../../../Shared/components/TagComponent";
 import MovieCastComponent from "./MovieCastComponent";
 import MovieCommentComponent from "./MovieCommentComponent";
 import MovieTrailerComponent from "./MovieTrailerComponent";
 
 export default function MovieDetailComponent() {
+  const theme = useTheme();
+
   return (
-    <Block style={styles.container}>
+    <Block paddingHorizontal={15} paddingVertical={5} color={'#201921'}>
       <Block row>
         <TagComponent tagName="Epic" />
         <TagComponent tagName="Fantasy" />
@@ -17,12 +18,12 @@ export default function MovieDetailComponent() {
       </Block>
 
       <Block paddingHorizontal={5} paddingVertical={15}>
-        <Text weight={"600"} color={Colors.secondaryTextColor} size={12}>
+        <Text weight={"600"} color={theme.secondaryTextColor} size={12}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni alias
           quae obcaecati voluptas facilis quia sint explicabo. Illum, eum
           necessitatibus. Hic odit optio pariatur vero quia aspernatur vel
           magnam laudantium...{" "}
-          <Text color={Colors.basicTextColor} size={12}>
+          <Text color={theme.textColor} size={12}>
             more
           </Text>
         </Text>
@@ -36,11 +37,3 @@ export default function MovieDetailComponent() {
     </Block>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 15,
-    paddingVertical: 5,
-    backgroundColor: "#201921",
-  },
-});

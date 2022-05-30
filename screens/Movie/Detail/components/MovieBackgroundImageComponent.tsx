@@ -1,4 +1,5 @@
 import { AntDesign } from "@expo/vector-icons";
+import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
@@ -7,8 +8,10 @@ import Layout from "../../../../models/constants/Layout";
 const _HEIGHT_IMAGE = Layout.window.height / 1.5;
 
 export default function MovieBackgroundImageComponent() {
+  const theme = useTheme();
+
   return (
-    <Block style={styles.container}>
+    <Block height={_HEIGHT_IMAGE}>
       <Image
         resizeMode="stretch"
         style={styles.imageContainer}
@@ -24,18 +27,18 @@ export default function MovieBackgroundImageComponent() {
           <Text
             size={24}
             style={styles.movieNameText}
-            color={Colors.secondaryTextColor}
+            color={theme.secondaryTextColor}
           >
             Dune
           </Text>
-          <Text marginTop={10} style={styles.movieNameText} color={Colors.secondaryTextColor}>
+          <Text marginTop={10} style={styles.movieNameText} color={theme.secondaryTextColor}>
             8.7
             <AntDesign name="star" size={18} color="#dbb28c" />
           </Text>
         </Block>
 
         <Block marginTop={5}>
-          <Text style={styles.releaseYearText} color={Colors.basicTextColor}>
+          <Text style={styles.releaseYearText} color={theme.textColor}>
             2021, Dennis Villeneuve
           </Text>
         </Block>
@@ -45,10 +48,6 @@ export default function MovieBackgroundImageComponent() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    height: _HEIGHT_IMAGE,
-  },
-
   imageContainer: {
     width: "100%",
     height: _HEIGHT_IMAGE,

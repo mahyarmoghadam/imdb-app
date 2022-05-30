@@ -6,16 +6,10 @@ import MovieDetailComponent from "./components/MovieDetailComponent";
 
 export default function MovieDetailScreen() {
   return (
-    <Block scroll style={styles.container}>
+    <Block scroll color='#201921' >
       <MovieBackgroundImageComponent />
 
       <MovieDetailComponent />
     </Block>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#201921",
-  },
-});

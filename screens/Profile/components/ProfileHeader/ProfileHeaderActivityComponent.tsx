@@ -1,3 +1,4 @@
+import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import { FlatList } from "native-base";
 import React from "react";
@@ -6,17 +7,19 @@ import Colors from "../../../../models/constants/Colors";
 import { profileActivity } from "../../../../models/movies/fake-movie";
 
 export default function ProfileHeaderActivityComponent() {
+  const theme = useTheme();
   const renderContent = ({ item }: any) => {
+
     return (
       <Block radius={10} marginHorizontal={5} color="#2e2531">
         <Block width={150} paddingHorizontal={20} paddingTop={10}>
           <Image style={styles.imageContainer} source={item.image} />
         </Block>
         <Block paddingHorizontal={10}>
-          <Text weight={'700'} paddingTop={5} color={Colors.secondaryTextColor}>
+          <Text weight={'700'} paddingTop={5} color={theme.secondaryTextColor}>
             {item.text}
           </Text>
-          <Text paddingBottom={10} size={13} color={Colors.basicTextColor}>
+          <Text paddingBottom={10} size={13} color={theme.textColor}>
             {item.activity}
           </Text>
         </Block>
@@ -37,12 +40,12 @@ export default function ProfileHeaderActivityComponent() {
 }
 
 const styles = StyleSheet.create({
- 
+
   imageContainer: {
     width: "100%",
     height: 100,
     borderRadius: 10,
-    borderColor: Colors.basicTextColor,
+    borderColor: '#aea8af',
     borderWidth: 0.6,
   },
 });

@@ -1,13 +1,15 @@
+import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-import Colors from "../../../../models/constants/Colors";
 
 export default function MovieTrailerComponent() {
+  const theme = useTheme();
+  
   return (
     <Block style={styles.container}>
       <Block row space="between">
-        <Text size={18} color={Colors.secondaryTextColor}>
+        <Text size={18} color={theme.secondaryTextColor}>
           Trailer
         </Text>
       </Block>

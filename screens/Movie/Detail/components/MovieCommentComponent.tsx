@@ -1,15 +1,15 @@
+import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
-import { FlatList, StyleSheet, Image } from "react-native";
-import Colors from "../../../../models/constants/Colors";
-import { fakeCast } from "../../../../models/movies/fake-movie";
 import MovieCommentListComponent from "./MovieCommentListComponent";
 
 export default function MovieCommentComponent() {
+  const theme = useTheme();
+
   return (
-    <Block style={styles.container}>
+    <Block paddingRight={15} paddingVertical={20} color={'#201921'} >
       <Block row space="between">
-        <Text size={18} color={Colors.secondaryTextColor}>
+        <Text size={18} color={theme.secondaryTextColor}>
           Comments
         </Text>
       </Block>
@@ -19,10 +19,3 @@ export default function MovieCommentComponent() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    paddingRight: 15,
-    paddingVertical: 20,
-    backgroundColor: "#201921"
-  },
-});
