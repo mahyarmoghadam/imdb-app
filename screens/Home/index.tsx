@@ -1,6 +1,6 @@
 import { Block } from "expo-ui-kit";
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet } from "react-native";
 import BodyComponent from "./components/body/BodyComponent";
 import HeaderComponent from "./components/header/HeaderComponent";
 

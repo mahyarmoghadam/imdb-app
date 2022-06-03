@@ -7,8 +7,7 @@ import {
   TouchableWithoutFeedback,
   FlatList,
 } from "react-native";
-import Colors from "../../../../models/constants/Colors";
-import { fakeCast } from "../../../../models/movies/fake-movie";
+import { fakeCast } from "@fake-datas";
 
 export default function ProfileFavoritePeopleComponent() {
   const theme = useTheme();

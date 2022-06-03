@@ -3,7 +3,7 @@ import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-import Layout from "../../../../models/constants/Layout";
+import { Layout } from "@constants";
 const _HEIGHT_IMAGE = Layout.window.height / 1.5;
 
 export default function MovieBackgroundImageComponent() {
@@ -30,7 +30,11 @@ export default function MovieBackgroundImageComponent() {
           >
             Dune
           </Text>
-          <Text marginTop={10} style={styles.movieNameText} color={theme.secondaryTextColor}>
+          <Text
+            marginTop={10}
+            style={styles.movieNameText}
+            color={theme.secondaryTextColor}
+          >
             8.7
             <AntDesign name="star" size={18} color="#dbb28c" />
           </Text>
