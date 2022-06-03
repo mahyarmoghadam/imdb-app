@@ -4,7 +4,6 @@ import { Block, Text } from "expo-ui-kit";
 import { FlatList } from "native-base";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-import Colors from "../../../../models/constants/Colors";
 
 export default function MovieCommentListComponent() {
   const theme = useTheme();

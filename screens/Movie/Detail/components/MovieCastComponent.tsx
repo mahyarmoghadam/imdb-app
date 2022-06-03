@@ -2,8 +2,7 @@ import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
 import { FlatList, StyleSheet, Image } from "react-native";
-import Colors from "../../../../models/constants/Colors";
-import { fakeCast } from "../../../../models/movies/fake-movie";
+import { fakeCast } from "@fake-datas";
 
 export default function MovieCastComponent() {
   const theme = useTheme();

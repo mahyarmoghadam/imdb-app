@@ -3,7 +3,6 @@ import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-import Colors from "../../../../models/constants/Colors";
 import Layout from "../../../../models/constants/Layout";
 const _HEIGHT_IMAGE = Layout.window.height / 1.5;
 
