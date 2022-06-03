@@ -1,3 +1,4 @@
+import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
 import {
@@ -10,6 +11,7 @@ import Colors from "../../../../models/constants/Colors";
 import { fakeCast } from "../../../../models/movies/fake-movie";
 
 export default function ProfileFavoritePeopleComponent() {
+  const theme = useTheme();
   const renderContent = ({ item }: any) => {
     return (
       <TouchableWithoutFeedback onPress={() => {}}>
@@ -22,7 +24,7 @@ export default function ProfileFavoritePeopleComponent() {
               size={12}
               weight={"700"}
               paddingTop={5}
-              color={Colors.secondaryTextColor}
+              color={theme.secondaryTextColor}
             >
               {item.name}
             </Text>
@@ -35,13 +37,13 @@ export default function ProfileFavoritePeopleComponent() {
   return (
     <Block marginTop={25} color="#201921" marginBottom={125}>
       <Block row space="between" padding={10}>
-        <Text size={18} weight={"700"} color={Colors.secondaryTextColor}>
+        <Text size={18} weight={"700"} color={theme.secondaryTextColor}>
           Favorite people{" "}
-          <Text size={14} color={Colors.basicTextColor}>
+          <Text size={14} color={theme.textColor}>
             28
           </Text>
         </Text>
-        <Text size={16} color={Colors.basicLinkColor}>
+        <Text size={16} color={theme.linkColor}>
           See all
         </Text>
       </Block>

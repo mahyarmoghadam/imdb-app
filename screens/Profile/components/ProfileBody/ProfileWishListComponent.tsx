@@ -4,8 +4,10 @@ import React from "react";
 import { StyleSheet, Image, TouchableWithoutFeedback, FlatList } from "react-native";
 import Colors from "../../../../models/constants/Colors";
 import { fakeMovieList } from "../../../../models/movies/fake-movie";
+import { useTheme } from '@hooks';
 
 export default function ProfileWishListComponent() {
+  const theme= useTheme();
   const renderContent = ({ item }: any) => {
     return (
       <TouchableWithoutFeedback onPress={() => {}}>
@@ -17,14 +19,14 @@ export default function ProfileWishListComponent() {
             <Text
               weight={"800"}
               paddingTop={5}
-              color={Colors.secondaryTextColor}
+              color={theme.secondaryTextColor}
             >
               {item.movieName}
             </Text>
             <Text
               weight={"800"}
               paddingTop={5}
-              color={Colors.secondaryTextColor}
+              color={theme.secondaryTextColor}
             >
               {item.rate}
               <AntDesign name="star" size={18} color="#dbb28c" />
@@ -32,7 +34,7 @@ export default function ProfileWishListComponent() {
           </Block>
 
           <Block>
-            <Text weight={"600"} color={Colors.basicTextColor}>
+            <Text weight={"600"} color={theme.textColor}>
               {item.releaseYear}
             </Text>
           </Block>
@@ -44,10 +46,10 @@ export default function ProfileWishListComponent() {
   return (
     <Block marginTop={25} color="#201921">
       <Block row space="between" padding={10}>
-        <Text size={18} weight={"700"} color={Colors.secondaryTextColor}>
-          Wish List  <Text size={14} color={Colors.basicTextColor}>7</Text>
+        <Text size={18} weight={"700"} color={theme.secondaryTextColor}>
+          Wish List  <Text size={14} color={theme.textColor}>7</Text>
         </Text>
-        <Text size={16} color={Colors.basicLinkColor}>
+        <Text size={16} color={theme.linkColor}>
           See all
         </Text>
       </Block>
