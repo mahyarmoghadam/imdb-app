@@ -115,4 +115,28 @@ const fakeForYou = [
   },
 ];
 
-export { fakeMovieList, fakeGenres, fakeCast, fakeForYou };
+const profileActivity = [
+  {
+    image: {
+      url: "https://zayzay.com/wp-content/uploads/2021/05/Cruella-pics-1.jpg",
+    },
+    text: "Ratings",
+    activity: 10,
+  },
+  {
+    image: {
+      url: "https://upload.wikimedia.org/wikipedia/en/8/8e/Dune_%282021_film%29.jpg",
+    },
+    text: "Lists",
+    activity: 3,
+  },
+  {
+    image: {
+      url: "https://upload.wikimedia.org/wikipedia/en/1/1c/Free_Guy_2021_Poster.jpg",
+    },
+    text: "Reviews",
+    activity: 23,
+  },
+];
+
+export { fakeMovieList, fakeGenres, fakeCast, fakeForYou, profileActivity };

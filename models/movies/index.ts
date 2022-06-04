@@ -1,3 +1,9 @@
-import { fakeCast, fakeForYou, fakeGenres, fakeMovieList } from "./fake-movie";
+import {
+  fakeCast,
+  fakeForYou,
+  fakeGenres,
+  fakeMovieList,
+  profileActivity,
+} from "./fake-movie";
 
-export { fakeCast, fakeForYou, fakeGenres, fakeMovieList };
+export { fakeCast, fakeForYou, fakeGenres, fakeMovieList, profileActivity };

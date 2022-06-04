@@ -3,6 +3,7 @@ import ModalScreen from "../screens/Shared/ModalScreen";
 import NotFoundScreen from "../screens/Shared/NotFoundScreen";
 import { RootStackParamList } from "../types";
 import { BottomTabNavigator } from "./BottomTabNavigator";
+import MovieDetailScreen from '../screens/Movie/Detail/index';
 
 
 /**
@@ -16,6 +17,7 @@ import { BottomTabNavigator } from "./BottomTabNavigator";
      <>
        <Stack.Navigator>
          <Stack.Screen name="Main" component={BottomTabNavigator} options={{ headerShown: false }} />
+         <Stack.Screen name="MovieDetail" component={MovieDetailScreen} options={{ headerShown: false }} />
          <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
          <Stack.Group screenOptions={{ presentation: 'modal' }}>
            <Stack.Screen name="Modal" component={ModalScreen} />

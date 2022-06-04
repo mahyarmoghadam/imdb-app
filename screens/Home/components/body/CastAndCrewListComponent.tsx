@@ -36,13 +36,4 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 50,
   },
-
-  movieNameText: {
-    fontWeight: "800",
-    paddingTop: 10,
-  },
-
-  releaseYearText: {
-    fontWeight: "600",
-  },
 });

@@ -13,6 +13,7 @@ module.exports = function (api) {
             "@hooks": "./hooks/index",
             "@fake-datas": "./models/movies/index",
             "@home-components": "./screens/Home/components/index",
+            "@movie-detail-components":"./screens/Movie/Detail/components/index",
             "@helpers": "./helpers/*",
           },
           extensions: [".ts", ".tsx"],

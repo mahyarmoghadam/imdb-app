@@ -6,7 +6,7 @@ import { Block, Text } from "expo-ui-kit";
 export default function GenresComponent() {
   const theme = useTheme();
   return (
-    <Block padding={50}>
+    <Block padding={20}>
       <Block row space="between">
         <Text size={18} color={theme.textColor}>
           Genres
