@@ -9,7 +9,7 @@ export default function GenresListComponent() {
   const theme = useTheme();
   const renderContent = ({ item }: any) => {
     return (
-      <Block paddingHorizontal={20} paddingRight={20}>
+      <Block paddingRight={20}>
         <Block>
           <Image style={styles.imageContainer} source={item.image} />
         </Block>
