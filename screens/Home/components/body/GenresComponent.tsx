@@ -7,7 +7,7 @@ export default function GenresComponent() {
   const theme = useTheme();
   return (
     <Block padding={20}>
-      <Block row space="between">
+      <Block marginBottom={20} row space="between">
         <Text size={18} color={theme.textColor}>
           Genres
         </Text>

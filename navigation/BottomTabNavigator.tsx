@@ -1,41 +1,31 @@
 import {
   MaterialIcons,
-  FontAwesome,
-  FontAwesome5,
   Octicons,
   Feather,
 } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
-import { Pressable, useColorScheme } from "react-native";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 import HomeScreen from "../screens/Home";
-import MovieDetailScreen from "../screens/Movie/Detail";
 import ProfileScreen from "../screens/Profile";
 import { RootTabParamList, RootTabScreenProps } from "../types";
 
-/**
- * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
- * https://reactnavigation.org/docs/bottom-tab-navigator
- */
+
+
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
-  const colorScheme = useColorScheme();
-
+  
   return (
     <BottomTab.Navigator
       initialRouteName="Home"
       screenOptions={{
         tabBarShowLabel: false,
         tabBarStyle: {
-          marginHorizontal: 15,
-          borderRadius: 15,
+          padding: 10,
+          borderTopStartRadius: 10,
+          borderTopEndRadius: 10,
           height: 60,
           position: "absolute",
-          bottom: 30,
-          borderColor: "#4c3441",
-          borderWidth: 1,
           backgroundColor: "#4c3441",
           shadowColor: "#000",
           shadowOpacity: 0.06,
@@ -69,7 +59,7 @@ function BottomTabNavigator() {
           title: "Home",
           tabBarIcon: ({ focused }) => (
             <MaterialIcons
-              name="explore"
+              name="search"
               size={25}
               color={focused ? "#bc9d89" : "grey"}
             />

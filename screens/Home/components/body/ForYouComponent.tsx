@@ -8,8 +8,8 @@ export default function ForYouComponent() {
   const theme = useTheme();
 
   return (
-    <Block padding={20} height={Layout.window.height / 1.9}>
-      <Block row space="between">
+    <Block padding={20} flex={1}>
+      <Block marginVertical={20}>
         <Text size={18} color={theme.textColor}>
           For You
         </Text>
