@@ -14,7 +14,7 @@ export default function ForYouListComponent() {
 
   const renderContent = ({ item }: any) => {
     return (
-      <Block shadow paddingHorizontal={20} paddingRight={20}>
+      <Block shadow paddingRight={20}>
         <Block>
           <Image
             resizeMode="stretch"
