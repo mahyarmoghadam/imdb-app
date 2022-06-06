@@ -14,7 +14,7 @@ export default function ForYouListComponent() {
 
   const renderContent = ({ item }: any) => {
     return (
-      <Block shadow paddingRight={20}>
+      <Block shadow paddingRight={20} >
         <Block>
           <Image
             resizeMode="stretch"
@@ -45,12 +45,13 @@ export default function ForYouListComponent() {
 
 const styles = StyleSheet.create({
   listContainer: {
-    paddingHorizontal: 5,
+    flex: 1,
   },
 
   imageContainer: {
-    width: 365,
-    height: 300,
     borderRadius: 15,
+    overflow: 'hidden',
+    width: 380,
+    height: 200,
   },
 });
