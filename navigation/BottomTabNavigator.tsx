@@ -25,7 +25,6 @@ function BottomTabNavigator() {
           borderTopStartRadius: 10,
           borderTopEndRadius: 10,
           height: 60,
-          position: "absolute",
           backgroundColor: "#4c3441",
           borderTopWidth: 0
         },

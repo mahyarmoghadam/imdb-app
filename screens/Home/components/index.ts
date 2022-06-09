@@ -1,15 +1,11 @@
-import CastAndCrewListComponent from "./body/CastAndCrewListComponent";
-import ForYouListComponent from "./body/ForYouListComponent";
-import GenresListComponent from "./body/GenresListComponent";
-import LegendaryMovieListComponent from "./body/LegendaryMovieListComponent";
-import PopularListComponent from "./body/PopularListComponent";
+import GenresItem from "./body/GenresItem";
+import MovieItem from "./body/MovieItem";
 import HeaderComponent from "./header/HeaderComponent";
+import HomeBannerItem from "./body/HomeBannerItem";
 
 export {
-  CastAndCrewListComponent,
-  ForYouListComponent,
-  LegendaryMovieListComponent,
-  PopularListComponent,
+  HomeBannerItem,
   HeaderComponent,
-  GenresListComponent,
+  GenresItem,
+  MovieItem,
 };
