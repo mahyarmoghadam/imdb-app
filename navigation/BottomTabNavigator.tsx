@@ -50,7 +50,7 @@ function BottomTabNavigator() {
 
       <BottomTab.Screen
         name="Explore"
-        component={PosterScreen}
+        component={HomeScreen}
         options={({ navigation }: RootTabScreenProps<"Explore">) => ({
           title: "Home",
           tabBarIcon: ({ focused }) => (
