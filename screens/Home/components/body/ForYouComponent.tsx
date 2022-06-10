@@ -8,14 +8,15 @@ export default function ForYouComponent() {
   const theme = useTheme();
 
   return (
-    <Block padding={20} flex={1}>
+    <Block flex={1}>
       <Block marginVertical={20}>
         <Text size={18} color={theme.textColor}>
           For You
         </Text>
       </Block>
-
-      <ForYouListComponent />
+      <Block noflex >
+        <ForYouListComponent />
+      </Block>
     </Block>
   );
 }

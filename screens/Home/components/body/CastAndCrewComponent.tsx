@@ -7,7 +7,7 @@ export default function CastAndCrewComponent() {
   const theme = useTheme();
 
   return (
-    <Block padding={20} marginBottom={70}>
+    <Block>
       <Block row space="between">
         <Text size={18} color={theme.textColor}>
           Cast & Crew

@@ -14,7 +14,7 @@ import { RootTabParamList, RootTabScreenProps } from "../types";
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
-  
+
   return (
     <BottomTab.Navigator
       initialRouteName="Home"
@@ -27,12 +27,7 @@ function BottomTabNavigator() {
           height: 60,
           position: "absolute",
           backgroundColor: "#4c3441",
-          shadowColor: "#000",
-          shadowOpacity: 0.06,
-          shadowOffset: {
-            width: 0,
-            height: 10,
-          },
+          borderTopWidth: 0
         },
       }}
     >
