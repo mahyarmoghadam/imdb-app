@@ -1,8 +1,6 @@
 import React from "react";
-import { fakeGenres } from "@fake-datas";
 import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
-import { FlatList } from "native-base";
 import { StyleSheet, Image } from "react-native";
 
 export interface GenresItemProps {
