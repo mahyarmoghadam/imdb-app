@@ -20,7 +20,7 @@ export default function MovieItem({ item }: MovieItemProps) {
     <TouchableWithoutFeedback
       onPress={() => navigation.navigate("MovieDetail")}
     >
-      <Block paddingVertical={20} paddingRight={20}>
+      <Block paddingVertical={20} marginHorizontal={10}>
         <Block>
           <Image style={styles.imageContainer} source={item.image} />
         </Block>
@@ -46,8 +46,9 @@ export default function MovieItem({ item }: MovieItemProps) {
 
 const styles = StyleSheet.create({
   imageContainer: {
-    width: 175,
+    minWidth: 175,
     height: 200,
     borderRadius: 20,
+    resizeMode: 'contain'
   },
 });
