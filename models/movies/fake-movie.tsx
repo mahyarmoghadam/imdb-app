@@ -107,7 +107,7 @@ const fakeCast = [
   },
 ];
 
-const fakeForYou = [
+const banners = [
   {
     image: {
       url: "https://zayzay.com/wp-content/uploads/2021/05/Cruella-pics-1.jpg",
@@ -139,4 +139,4 @@ const profileActivity = [
   },
 ];
 
-export { fakeMovieList, fakeGenres, fakeCast, fakeForYou, profileActivity };
+export { fakeMovieList, fakeGenres, fakeCast, banners, profileActivity };

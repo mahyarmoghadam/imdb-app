@@ -14,6 +14,7 @@ module.exports = function (api) {
             "@fake-datas": "./models/movies/index",
             "@home-components": "./screens/Home/components/index",
             "@movie-detail-components":"./screens/Movie/Detail/components/index",
+            "@components":'./components/index',
             "@helpers": "./helpers/*",
           },
           extensions: [".ts", ".tsx"],

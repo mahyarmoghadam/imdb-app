@@ -3,6 +3,7 @@ import {
   Octicons,
   Feather,
 } from "@expo/vector-icons";
+import { useTheme } from "@hooks";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import HomeScreen from "../screens/Home";
@@ -14,7 +15,7 @@ import { RootTabParamList, RootTabScreenProps } from "../types";
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
-
+  const theme = useTheme();
   return (
     <BottomTab.Navigator
       initialRouteName="Home"
@@ -25,8 +26,7 @@ function BottomTabNavigator() {
           borderTopStartRadius: 10,
           borderTopEndRadius: 10,
           height: 60,
-          position: "absolute",
-          backgroundColor: "#4c3441",
+          backgroundColor: theme.textInput,
           borderTopWidth: 0
         },
       }}
@@ -40,7 +40,7 @@ function BottomTabNavigator() {
             <Octicons
               name="home"
               size={22}
-              color={focused ? "#bc9d89" : "grey"}
+              color={focused ? theme.navigationIconColor : "grey"}
             />
           ),
           headerShown: false,
@@ -56,7 +56,7 @@ function BottomTabNavigator() {
             <MaterialIcons
               name="search"
               size={25}
-              color={focused ? "#bc9d89" : "grey"}
+              color={focused ? theme.navigationIconColor : "grey"}
             />
           ),
           headerShown: false,
@@ -72,7 +72,7 @@ function BottomTabNavigator() {
             <Feather
               name="video"
               size={22}
-              color={focused ? "#bc9d89" : "grey"}
+              color={focused ? theme.navigationIconColor : "grey"}
             />
           ),
           headerShown: false,
@@ -88,7 +88,7 @@ function BottomTabNavigator() {
             <Feather
               name="user"
               size={22}
-              color={focused ? "#bc9d89" : "grey"}
+              color={focused ? theme.navigationIconColor : "grey"}
             />
           ),
           headerShown: false,
