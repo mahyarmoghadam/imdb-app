@@ -8,5 +8,6 @@ export default interface Theme {
   secondaryTextColor: string;
   linkColor: string;
   textInput: string;
+  navigationIconColor: string;
   ratingColor: string;
 }

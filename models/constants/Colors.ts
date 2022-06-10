@@ -14,6 +14,7 @@ export default {
     secondaryTextColor: "#3c3c3e",
     linkColor: "#ff5524",
     textInput: "#f2f2f3",
+    navigationIconColor:"#ff5524",
     ratingColor: "#ffcc66",
   } as Theme,
   dark: {
@@ -25,7 +26,10 @@ export default {
     textColor: "#aea8af",
     secondaryTextColor: "#eae6e8",
     linkColor: "#402760",
+    navigationIconColor:"#bc9d89",
     textInput: "#382c3e",
+
     ratingColor: "#dbb28c",
   } as Theme,
+
 };

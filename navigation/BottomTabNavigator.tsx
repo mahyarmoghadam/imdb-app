@@ -40,7 +40,7 @@ function BottomTabNavigator() {
             <Octicons
               name="home"
               size={22}
-              color={focused ? theme.linkColor : "grey"}
+              color={focused ? theme.navigationIconColor : "grey"}
             />
           ),
           headerShown: false,
@@ -56,7 +56,7 @@ function BottomTabNavigator() {
             <MaterialIcons
               name="search"
               size={25}
-              color={focused ? theme.linkColor : "grey"}
+              color={focused ? theme.navigationIconColor : "grey"}
             />
           ),
           headerShown: false,
@@ -72,7 +72,7 @@ function BottomTabNavigator() {
             <Feather
               name="video"
               size={22}
-              color={focused ? theme.linkColor : "grey"}
+              color={focused ? theme.navigationIconColor : "grey"}
             />
           ),
           headerShown: false,
@@ -88,7 +88,7 @@ function BottomTabNavigator() {
             <Feather
               name="user"
               size={22}
-              color={focused ? theme.linkColor : "grey"}
+              color={focused ? theme.navigationIconColor : "grey"}
             />
           ),
           headerShown: false,
