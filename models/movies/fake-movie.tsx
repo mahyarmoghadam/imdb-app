@@ -1,5 +1,6 @@
 const fakeMovieList = [
   {
+    id: 1,
     image: {
       url: "https://upload.wikimedia.org/wikipedia/en/1/1c/Free_Guy_2021_Poster.jpg",
     },
@@ -8,6 +9,7 @@ const fakeMovieList = [
     rate: 7.1,
   },
   {
+    id: 2,
     image: {
       url: "https://upload.wikimedia.org/wikipedia/en/8/8e/Dune_%282021_film%29.jpg",
     },
@@ -16,6 +18,7 @@ const fakeMovieList = [
     rate: 8.2,
   },
   {
+    id: 3,
     image: {
       url: "https://upload.wikimedia.org/wikipedia/en/7/74/Shang-Chi_and_the_Legend_of_the_Ten_Rings_poster.jpeg",
     },
@@ -24,6 +27,7 @@ const fakeMovieList = [
     rate: 7.8,
   },
   {
+    id: 4,
     image: {
       url: "https://upload.wikimedia.org/wikipedia/en/f/f6/Cruella_2021_film_poster.jpg",
     },
@@ -32,6 +36,7 @@ const fakeMovieList = [
     rate: 7.3,
   },
   {
+    id: 5,
     image: {
       url: "https://upload.wikimedia.org/wikipedia/en/1/19/Minions_%282015_film%29.jpg",
     },
