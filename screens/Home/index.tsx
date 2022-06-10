@@ -1,3 +1,4 @@
+
 import { SIZES } from "@constants";
 import { useTheme } from "@hooks";
 import { Block } from "expo-ui-kit";
@@ -10,7 +11,7 @@ export default function HomeScreen() {
   return (
     <Block>
       <Block noflex height={SIZES.padding} color={theme.background}></Block>
-      <Block scroll color={'#140f14'}>
+      <Block scroll color={theme.background}>
         <HeaderComponent />
         <HomeBody />
       </Block>

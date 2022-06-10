@@ -1,14 +1,28 @@
 import { FontAwesome } from "@expo/vector-icons";
+import { useTheme } from "@hooks";
 import { Block } from "expo-ui-kit";
 import React from "react";
 import { StyleSheet, TextInput } from "react-native";
 
 export default function SearchComponent() {
-  return ( 
-      <Block paddingHorizontal={20} style={styles.container} row>
-        <FontAwesome style={styles.searchIcon} color='#998396' size={25} name="search" />
-        <TextInput style={styles.searchContainer}  placeholder="search" placeholderTextColor='#998396'/>
-      </Block>
+  const theme = useTheme();
+  return (
+    <Block paddingHorizontal={20} style={styles.container} row>
+      <FontAwesome
+        style={styles.searchIcon}
+        color={theme.linkColor}
+        size={25}
+        name="search"
+      />
+      <TextInput
+        style={[
+          styles.searchContainer,
+          { backgroundColor: theme.textInput, borderColor: theme.textInput },
+        ]}
+        placeholder="search"
+        placeholderTextColor={theme.linkColor}
+      />
+    </Block>
   );
 }
 
@@ -23,12 +37,9 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 60,
     borderRadius: 15,
-    backgroundColor:'#382c3e',
-    borderColor: "#000",
     borderWidth: 1,
-    color:'#998396',
-    fontWeight:'600'
-    
+    color: "#998396",
+    fontWeight: "600",
   },
 
   searchIcon: {

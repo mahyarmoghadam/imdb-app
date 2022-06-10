@@ -11,7 +11,7 @@ export type StatusBarContextProps = {
 };
 
 export const StatusBarContext = createContext<StatusBarContextProps>({
-  statusBarStyle: "light",
+  statusBarStyle: "dark",
   setStatusBarStyle: () => {},
 });
 
@@ -22,7 +22,7 @@ export default function StatusBarContextProvider({
 
   return (
     <StatusBarContext.Provider value={{ statusBarStyle, setStatusBarStyle }}>
-      <StatusBar style={statusBarStyle ?? "light"} />
+      <StatusBar style={statusBarStyle ?? "dark"} />
       {children}
     </StatusBarContext.Provider>
   );

@@ -30,7 +30,7 @@ export default function MovieItem({ item }: MovieItemProps) {
           </Text>
           <Text weight={"800"} paddingTop={10} color={theme.secondaryTextColor}>
             {item.rate}
-            <AntDesign name="star" size={18} color="#dbb28c" />
+            <AntDesign name="star" size={18} color={theme.ratingColor} />
           </Text>
         </Block>
 

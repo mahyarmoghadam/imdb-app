@@ -7,4 +7,6 @@ export default interface Theme {
   textColor: string;
   secondaryTextColor: string;
   linkColor: string;
+  textInput: string;
+  ratingColor: string;
 }
