@@ -9,6 +9,7 @@ import React from "react";
 import HomeScreen from "../screens/Home";
 import ProfileScreen from "../screens/Profile";
 import { RootTabParamList, RootTabScreenProps } from "../types";
+import PosterScreen from "../screens/Movie/Poster/index";
 
 
 
@@ -49,7 +50,7 @@ function BottomTabNavigator() {
 
       <BottomTab.Screen
         name="Explore"
-        component={HomeScreen}
+        component={PosterScreen}
         options={({ navigation }: RootTabScreenProps<"Explore">) => ({
           title: "Home",
           tabBarIcon: ({ focused }) => (
