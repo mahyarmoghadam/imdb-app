@@ -1,8 +1,9 @@
 import { Block } from "expo-ui-kit";
 import React from "react";
-import { FlatList, StyleSheet, Image, Animated } from "react-native";
+import { FlatList, Animated } from "react-native";
 import { Layout } from "@constants";
 import { LinearGradient } from "expo-linear-gradient";
+import PosterBackDropContent from "./PosterBackDropContent";
 
 const { width, height } = Layout.window;
 const BACKDROP_HEIGHT = height * 0.65;
@@ -26,33 +27,13 @@ export default function PosterBackDrop({
         removeClippedSubviews={false}
         contentContainerStyle={{ width, height: BACKDROP_HEIGHT }}
         renderItem={({ item, index }) => {
-          if (!item.image) {
-            return null;
-          }
-          const translateX = scrollX.interpolate({
-            inputRange: [(index - 2) * itemSize, (index - 1) * itemSize],
-            outputRange: [0, width]
-          });
           return (
-            <Animated.View
-              removeClippedSubviews={false}
-              style={{
-                position: "absolute",
-                width: translateX,
-                height,
-                overflow: "hidden",
-              }}
-            >
-              <Image
-                source={item.image}
-                style={{
-                  width,
-                  resizeMode: "stretch",
-                  height: BACKDROP_HEIGHT,
-                  position: "absolute",
-                }}
-              />
-            </Animated.View>
+            <PosterBackDropContent
+              index={index}
+              item={item}
+              scrollX={scrollX}
+              itemSize={itemSize}
+            />
           );
         }}
       />
@@ -68,4 +49,3 @@ export default function PosterBackDrop({
     </Block>
   );
 }
-
