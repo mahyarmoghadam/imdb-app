@@ -1,33 +1,35 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useTheme } from "@hooks";
 import { Block } from "expo-ui-kit";
-import { WidgetTitle } from "@components";
-import { FlatList } from "native-base";
-import { banners, fakeGenres } from "@fake-datas";
-import { HomeBannerItem } from "@home-components";
-import { Animated, Platform } from "react-native";
+import React, { useEffect, useState } from "react";
+import { StatusBar, Platform, Animated } from "react-native";
+import { fakeMovieList } from "@fake-datas";
 import { Layout } from "@constants";
+import PosterBackDrop from "./components/PosterBackDrop";
+import PosterItem from "./components/PosterItem";
 
 const { width } = Layout.window;
 const ITEM_SIZE = Platform.OS === "ios" ? width * 0.72 : width * 0.74;
 
-export default function HomeBannerComponent() {
+export default function PosterScreen() {
+  const theme = useTheme();
+  const scrollX = React.useRef(new Animated.Value(0)).current;
   const [movies, setMovies] = useState<any>();
-  const scrollX = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    setMovies([{ id: "empty-left" }, ...fakeGenres, { id: "empty-right" }]);
+    setMovies([{ id: "empty-left" }, ...fakeMovieList, { id: "empty-right" }]);
   }, []);
 
   return (
-    <Block>
-      <WidgetTitle title="For You" />
-
+    <Block color={theme.background}>
+      <PosterBackDrop data={movies} scrollX={scrollX} itemSize={ITEM_SIZE} />
+      <StatusBar hidden />
       <Animated.FlatList
         showsHorizontalScrollIndicator={false}
         data={movies}
         horizontal
         bounces={false}
         decelerationRate={Platform.OS === "ios" ? 0 : 0.98}
+        contentContainerStyle={{ alignItems: "center" }}
         renderToHardwareTextureAndroid
         snapToInterval={ITEM_SIZE}
         snapToAlignment="start"
@@ -38,7 +40,7 @@ export default function HomeBannerComponent() {
         )}
         keyExtractor={(item) => `${item.id}`}
         renderItem={({ item, index }) => (
-          <HomeBannerItem item={item} index={index} scrollX={scrollX} />
+          <PosterItem item={item} index={index} scrollX={scrollX} />
         )}
       />
     </Block>
