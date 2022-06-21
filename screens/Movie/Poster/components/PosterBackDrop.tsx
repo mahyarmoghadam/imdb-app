@@ -26,17 +26,16 @@ export default function PosterBackDrop({
         keyExtractor={(item) => item.id + "-backdrop"}
         removeClippedSubviews={false}
         contentContainerStyle={{ width, height: BACKDROP_HEIGHT }}
-        renderItem={({ item, index }) => {
-          return (
-            <PosterBackDropContent
-              index={index}
-              item={item}
-              scrollX={scrollX}
-              itemSize={itemSize}
-            />
-          );
-        }}
+        renderItem={({ item, index }) => (
+          <PosterBackDropContent
+            index={index}
+            item={item}
+            scrollX={scrollX}
+            itemSize={itemSize}
+          />
+        )}
       />
+      
       <LinearGradient
         colors={["rgba(0, 0, 0, 0)", "white"]}
         style={{

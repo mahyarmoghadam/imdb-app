@@ -11,15 +11,15 @@ export interface WidgetTitleProps {
 export default function WidgetTitle({ title, onPress }: WidgetTitleProps) {
   const theme = useTheme();
   return (
-    <TouchableWithoutFeedback onPress={onPress}>
-      <Block row space="between" paddingVertical={10}>
-        <Text size={18} color={theme.textColor}>
-          {title}
-        </Text>
+    <Block row space="between" paddingVertical={10}>
+      <Text size={18} color={theme.textColor}>
+        {title}
+      </Text>
+      <TouchableWithoutFeedback onPress={onPress}>
         <Text size={16} color={theme.linkColor} marginRight={SIZES.base}>
           See all
         </Text>
-      </Block>
-    </TouchableWithoutFeedback>
+      </TouchableWithoutFeedback>
+    </Block>
   );
 }

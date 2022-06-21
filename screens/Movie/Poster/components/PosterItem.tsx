@@ -1,13 +1,16 @@
 import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
-import { StyleSheet, Image, Animated, Platform } from "react-native";
+import { StyleSheet, Image, Animated } from "react-native";
 import { Layout } from "@constants";
 import { AntDesign } from "@expo/vector-icons";
+import { MovieRate } from "@components";
 
 const { width } = Layout.window;
+const { isIOS } = Layout;
+
 const SPACING = 10;
-const ITEM_SIZE = Platform.OS === "ios" ? width * 0.72 : width * 0.74;
+const ITEM_SIZE = isIOS ? width * 0.72 : width * 0.74;
 const EMPTY_ITEM_SIZE = (width - ITEM_SIZE) / 2;
 
 export interface PosterItemProps {
@@ -57,14 +60,7 @@ export default function PosterItem({ item, index, scrollX }: PosterItemProps) {
           {item.movieName}
         </Text>
 
-        <Block noflex style={styles.rating}>
-          <Text style={styles.ratingNumber}>{item.rate}</Text>
-          {[1, 2, 3, 4, 5].map((type, index) => {
-            return (
-              <AntDesign key={index} name="star" size={12} color="tomato" />
-            );
-          })}
-        </Block>
+        <MovieRate rate={item.rate}/>
 
         <Block noflex style={styles.genres}>
           <Block noflex style={styles.genre}>

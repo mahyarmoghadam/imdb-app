@@ -8,7 +8,9 @@ import { Animated, Platform } from "react-native";
 import { Layout } from "@constants";
 
 const { width } = Layout.window;
-const ITEM_SIZE = Platform.OS === "ios" ? width * 0.72 : width * 0.74;
+const { isIOS } = Layout;
+
+const ITEM_SIZE = isIOS ? width * 0.72 : width * 0.74;
 
 export default function HomeBannerComponent() {
   const [movies, setMovies] = useState<any>();
