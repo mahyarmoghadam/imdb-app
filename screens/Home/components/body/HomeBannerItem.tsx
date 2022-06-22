@@ -2,11 +2,13 @@ import { Layout } from "@constants";
 import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
-import { StyleSheet, Image, Animated, Platform } from "react-native";
+import { StyleSheet, Image, Animated } from "react-native";
 
 const { width } = Layout.window;
+const { isIOS } = Layout;
+
 const SPACING = 5;
-const ITEM_SIZE = Platform.OS === "ios" ? width * 0.72 : width * 0.74;
+const ITEM_SIZE = isIOS ? width * 0.72 : width * 0.74;
 const EMPTY_ITEM_SIZE = (width - ITEM_SIZE) / 2;
 
 export interface HomeBannerItemProps {
@@ -39,12 +41,12 @@ export default function HomeBannerItem({
   });
 
   return (
-    <Block  noflex width={ITEM_SIZE}>
+    <Block noflex width={ITEM_SIZE}>
       <Animated.View
         style={{
           marginHorizontal: SPACING,
           padding: SPACING * 1.2,
-          
+
           alignItems: "center",
           transform: [{ translateY }],
           backgroundColor: theme.background,
@@ -68,8 +70,8 @@ export default function HomeBannerItem({
 const styles = StyleSheet.create({
   imageContainer: {
     width: "100%",
-    
-    height: ITEM_SIZE * .8,
+
+    height: ITEM_SIZE * 0.8,
     resizeMode: "stretch",
     borderRadius: 18,
     margin: 0,
