@@ -3,7 +3,7 @@ import { Block, Text } from "expo-ui-kit";
 import { FlatList } from "native-base";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-import { profileActivity } from "@fake-datas";
+import { profileActivity } from "@models";
 
 export default function ProfileHeaderActivityComponent() {
   const theme = useTheme();

@@ -2,7 +2,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
 import { StyleSheet, Image, TouchableWithoutFeedback, FlatList } from "react-native";
-import { fakeMovieList } from "@fake-datas";
+import { fakeMovieList } from "@models";
 import { useTheme } from '@hooks';
 
 export default function ProfileWishListComponent() {

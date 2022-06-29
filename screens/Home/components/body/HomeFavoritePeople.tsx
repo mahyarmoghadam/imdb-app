@@ -1,6 +1,6 @@
 import React from "react";
 import { PersonHorizontalList, PersonItem } from "@components";
-import { fakeCast } from "@fake-datas";
+import { fakeCast } from "@models";
 
 export default function HomeFavoritePeople() {
   return (

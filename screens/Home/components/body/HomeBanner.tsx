@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Block } from "expo-ui-kit";
 import { WidgetTitle } from "@components";
 import { FlatList } from "native-base";
-import { banners, fakeGenres } from "@fake-datas";
+import { banners, fakeGenres } from "@models";
 import { HomeBannerItem } from "@home-components";
 import { Animated, Platform } from "react-native";
 import { Layout } from "@constants";
