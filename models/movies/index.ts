@@ -6,4 +6,6 @@ import {
   profileActivity,
 } from "./fake-movie";
 
-export { fakeCast, banners, fakeGenres, fakeMovieList, profileActivity };
+import { MovieList } from './MovieList'
+
+export { fakeCast, MovieList, banners, fakeGenres, fakeMovieList, profileActivity };
