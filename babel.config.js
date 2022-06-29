@@ -15,7 +15,6 @@ module.exports = function (api) {
             "@home-components": "./screens/Home/components/index",
             "@movie-detail-components":"./screens/Movie/Detail/components/index",
             "@components":'./components/index',
-            "@services":'./services/index',
             "@generalService": './services/Shared/index',
             "@helpers": "./helpers/*",
           },
