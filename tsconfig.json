@@ -11,6 +11,7 @@
       "@movie-detail-components": ["./screens/Movie/Detail/components/index"],
       "@components": ["./components/index"],
       "@services": ["./services/index"],
+      "@generalService": ["./services/Shared/GeneralService"],
       "@helpers": ["./helpers/*"]
     }
   }

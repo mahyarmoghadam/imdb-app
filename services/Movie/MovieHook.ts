@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { Get } from "../Shared/GeneralService"
+import { Get } from "@generalService"
 import { MovieList } from "@models";
 
 const useMovieList = (movieId: number, page: number = 1) => {

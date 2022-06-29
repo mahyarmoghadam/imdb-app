@@ -16,6 +16,7 @@ module.exports = function (api) {
             "@movie-detail-components":"./screens/Movie/Detail/components/index",
             "@components":'./components/index',
             "@services":'./services/index',
+            "@generalService": './services/Shared/index',
             "@helpers": "./helpers/*",
           },
           extensions: [".ts", ".tsx"],
