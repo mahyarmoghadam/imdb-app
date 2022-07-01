@@ -3,7 +3,7 @@ import { useTheme } from "@hooks";
 import { Block } from "expo-ui-kit";
 import { WidgetTitle } from "@components";
 import { FlatList } from "native-base";
-import { fakeGenres } from '@fake-datas';
+import { fakeGenres } from '@models';
 import GenresItem from "./GenresItem";
 
 export default function HomeGenres() {

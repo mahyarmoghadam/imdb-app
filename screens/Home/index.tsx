@@ -1,4 +1,3 @@
-
 import { SIZES } from "@constants";
 import { useTheme } from "@hooks";
 import { Block } from "expo-ui-kit";
@@ -8,6 +7,7 @@ import HeaderComponent from "./components/header/HeaderComponent";
 
 export default function HomeScreen() {
   const theme = useTheme();
+
   return (
     <Block>
       <Block noflex height={SIZES.padding} color={theme.background}></Block>
@@ -18,4 +18,3 @@ export default function HomeScreen() {
     </Block>
   );
 }
-

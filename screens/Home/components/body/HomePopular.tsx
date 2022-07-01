@@ -1,6 +1,6 @@
 import React from "react";
 import { Block } from "expo-ui-kit";
-import { fakeMovieList } from "@fake-datas";
+import { fakeMovieList } from "@models";
 import { WidgetTitle } from "@components";
 import { FlatList } from "native-base";
 import { MovieItem } from "@home-components";

@@ -1,7 +1,7 @@
 import React from "react";
 import { Block } from "expo-ui-kit";
 import { WidgetTitle } from "@components";
-import { fakeMovieList } from "@fake-datas";
+import { fakeMovieList } from "@models";
 import { MovieItem } from "@home-components";
 import { FlatList } from "native-base";
 import { NavigationProp, useNavigation } from '@react-navigation/native';

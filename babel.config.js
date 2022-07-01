@@ -11,10 +11,11 @@ module.exports = function (api) {
           alias: {
             "@constants": "./models/constants/index",
             "@hooks": "./hooks/index",
-            "@fake-datas": "./models/movies/index",
+            "@models": "./models/index",
             "@home-components": "./screens/Home/components/index",
             "@movie-detail-components":"./screens/Movie/Detail/components/index",
             "@components":'./components/index',
+            "@generalService": './services/Shared/index',
             "@helpers": "./helpers/*",
           },
           extensions: [".ts", ".tsx"],
