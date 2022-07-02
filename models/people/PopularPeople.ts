@@ -1,6 +1,3 @@
-
-
-
 export interface PeopleInfo {
     poster_path: string;
     adult: boolean;
