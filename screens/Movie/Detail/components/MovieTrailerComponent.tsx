@@ -7,7 +7,7 @@ export default function MovieTrailerComponent() {
   const theme = useTheme();
   
   return (
-    <Block style={styles.container}>
+    <Block paddingHorizontal={15} style={styles.container} color={theme.background}>
       <Block row space="between">
         <Text size={18} color={theme.secondaryTextColor}>
           Trailer
@@ -29,13 +29,12 @@ export default function MovieTrailerComponent() {
 const styles = StyleSheet.create({
   container: {
     paddingVertical: 5,
-    backgroundColor: "#201921",
   },
 
   imageContainer: {
     width: "100%",
     height: 200,
-    borderRadius: 10,
+    borderRadius: 5,
     paddingVertical: 10,
   },
 });

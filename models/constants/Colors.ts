@@ -16,6 +16,7 @@ export default {
     textInput: "#f2f2f3",
     navigationIconColor:"#ff5524",
     ratingColor: "#ffcc66",
+    tags:'#EC994B',
   } as Theme,
   dark: {
     text: "#fff",
@@ -28,7 +29,7 @@ export default {
     linkColor: "#402760",
     navigationIconColor:"#bc9d89",
     textInput: "#382c3e",
-
+    tags:'#EC994B',
     ratingColor: "#dbb28c",
   } as Theme,
 

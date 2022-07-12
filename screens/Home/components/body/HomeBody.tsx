@@ -9,7 +9,7 @@ import HomeGenres from "./HomeGenres";
 
 export default function HomeBody() {
   return (
-    <Block paddingLeft={SIZES.small_padding}>
+    <Block >
       <Block >
         <HomeBannerComponent />
       </Block>

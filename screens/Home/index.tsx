@@ -10,7 +10,6 @@ export default function HomeScreen() {
 
   return (
     <Block>
-      <Block noflex height={SIZES.padding} color={theme.background}></Block>
       <Block scroll color={theme.background}>
         <HeaderComponent />
         <HomeBody />

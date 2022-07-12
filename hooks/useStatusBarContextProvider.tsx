@@ -22,7 +22,7 @@ export default function StatusBarContextProvider({
 
   return (
     <StatusBarContext.Provider value={{ statusBarStyle, setStatusBarStyle }}>
-      <StatusBar style={statusBarStyle ?? "dark"} />
+      <StatusBar style={"dark"} />
       {children}
     </StatusBarContext.Provider>
   );

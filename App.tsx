@@ -1,11 +1,13 @@
+import { useTheme } from "@hooks";
+import { Block } from "expo-ui-kit";
 import { NativeBaseProvider } from "native-base";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 import useCachedResources from "./hooks/useCachedResources";
 import useColorScheme from "./hooks/useColorScheme";
-import StatusBarContextProvider from "./hooks/useStatusBarContextProvider";
+import StatusBarContextProvider, { StatusBarContext } from "./hooks/useStatusBarContextProvider";
 import Navigation from "./navigation";
 
 const queryClient = new QueryClient();
@@ -13,6 +15,9 @@ const queryClient = new QueryClient();
 export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
+  const theme = useTheme();
+
+
 
   if (!isLoadingComplete) {
     return null;
@@ -22,6 +27,7 @@ export default function App() {
         <QueryClientProvider client={queryClient}>
           <StatusBarContextProvider>
             <NativeBaseProvider>
+              <Block noflex height={20} color={theme.background}></Block>
               <Navigation colorScheme={colorScheme} />
             </NativeBaseProvider>
           </StatusBarContextProvider>
