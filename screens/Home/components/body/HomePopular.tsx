@@ -13,6 +13,7 @@ export default function HomePopular() {
         data={fakeMovieList}
         horizontal
         renderItem={({item}) => <MovieItem item={item} />}
+        showsHorizontalScrollIndicator={false}
       />
     </Block>
   );
