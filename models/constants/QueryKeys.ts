@@ -8,6 +8,7 @@ export enum QueryKeys {
     MovieImages = "MovieImages",
     MovieReviews = "MovieReviews",
     MovieTopRated = "MovieTopRated",
+    MoviePopular = "MoviePopular",
     // People
     PeoplePopular = "PopularPeople",
 

@@ -1,3 +1,4 @@
+import { MoviePopular } from './../../models/movies/MoviePopular';
 import { QueryKeys } from '@constants';
 import { useQuery } from "react-query";
 import { Get } from "@generalService"
@@ -45,4 +46,11 @@ const useTopRated = (page: number = 1, lang: string = 'en-US') => {
     });
 }
 
-export { useMovieList, useMovieDetail, useMovieCredits, useMovieVideos, useMovieReviews, useMovieImages, useTopRated };
+const usePopular = (page: number = 1, lang: string = 'en-US') => {
+    return useQuery(QueryKeys.MoviePopular, async () => {
+        return await Get<MoviePopular>(`movie/popular?language=${lang}&page=${page}`);
+    });
+}
+
+
+export { useMovieList, useMovieDetail, useMovieCredits, useMovieVideos, useMovieReviews, useMovieImages, useTopRated, usePopular };
