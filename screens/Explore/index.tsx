@@ -2,11 +2,11 @@ import { banners, fakeGenres, fakeMovieList } from "@fake-datas";
 import { GenresItem, HomeBannerItem, MovieItem } from "@home-components";
 import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
-import { FlatList } from "native-base";
 import React from "react";
 import { SearchBarComponent, SectionComponent } from "./components";
-import { StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, View } from 'react-native';
 import HomeGenres from '../Home/components/body/HomeGenres';
+import SectionItemComponent from "./components/SectionItemComponent";
 
 export default function ExploreScreen() {
   const theme = useTheme();
@@ -17,59 +17,57 @@ export default function ExploreScreen() {
         <SearchBarComponent />
       </View>
       <Block scroll>
-        <SectionComponent
-          actionButtonText="button"
-          headerTitle="header Title"
-          headerIcon="search"
-          actionButtonEvent={(e) => alert(e)} >
-          <FlatList
-            data={fakeGenres}
-            horizontal
-            renderItem={({ item }) => <GenresItem item={item} />}
-          />
-        </SectionComponent>
+        <Block >
+          <SectionComponent
+            actionButtonText="clear"
+            headerTitle="Recent"
+            headerIcon="search"
+            actionButtonEvent={(e) => alert(e)} >
+            <FlatList
+              data={fakeMovieList}
+              horizontal
+              renderItem={({ item }) => <SectionItemComponent item={item} />}
+            />
+          </SectionComponent>
+        </Block >
 
         <SectionComponent
-          actionButtonText="button"
-          headerTitle="header Title"
-          headerIcon="search"
+          headerTitle="Movies"
+          headerIcon="file-movie-o"
           actionButtonEvent={(e) => alert(e)} >
-          <Block style={{ flex: 1, justifyContent: 'flex-start' }}>
-            <FlatList
-              key={'#'}
-              keyExtractor={item => "#" + item.movieName}
-              numColumns={2}
-              data={fakeMovieList}
-              renderItem={({ item }) => <MovieItem item={item} />}
-            />
+          <Block row wrap>
+            {fakeMovieList.map((item, index) => (
+              <View key={index} style={{ width: '46%', margin: '2%', flexDirection: "row" }}>
+                <SectionItemComponent item={item} />
+              </View>
+            ))}
+          </Block>
+        </SectionComponent>
+
+
+        <SectionComponent
+          headerTitle="Streaming and TV"
+          headerIcon="tv"
+          actionButtonEvent={(e) => alert(e)} >
+          <Block row wrap>
+            {fakeMovieList.map((item, index) => (
+              <View key={index} style={{ width: '46%', margin: '2%', flexDirection: "row" }}>
+                <SectionItemComponent item={item} />
+              </View>
+            ))}
           </Block>
         </SectionComponent>
 
         <SectionComponent
-          headerTitle="header Title"
-          headerIcon="search">
-          <Block style={{ flex: 1, justifyContent: 'flex-start' }}>
-            <FlatList
-              key={'#'}
-              keyExtractor={item => "#" + item.movieName}
-              numColumns={2}
-              data={fakeMovieList}
-              renderItem={({ item }) => <MovieItem item={item} />}
-            />
-          </Block>
-        </SectionComponent>
-
-        <SectionComponent
-          headerTitle="header Title"
-          headerIcon="search">
-          <Block style={{ flex: 1, justifyContent: 'flex-start' }}>
-            <FlatList
-              key={'#'}
-              keyExtractor={item => "#" + item.movieName}
-              numColumns={2}
-              data={fakeMovieList}
-              renderItem={({ item }) => <MovieItem item={item} />}
-            />
+          headerTitle="Celebs"
+          headerIcon="users"
+          actionButtonEvent={(e) => alert(e)} >
+          <Block row wrap>
+            {fakeMovieList.map((item, index) => (
+              <View key={index} style={{ width: '46%', margin: '2%', flexDirection: "row" }}>
+                <SectionItemComponent item={item} />
+              </View>
+            ))}
           </Block>
         </SectionComponent>
       </Block>

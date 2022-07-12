@@ -8,7 +8,7 @@ import { GestureResponderEvent, StyleSheet, TextInput, TouchableOpacity } from '
 export interface SectionComponentProps {
   actionButtonText?: string,
   headerTitle?: string,
-  headerIcon?: string,
+  headerIcon?: any,
   actionButtonEvent?: ((event: GestureResponderEvent) => void) | undefined;
   children: JSX.Element,
   style?: Record<string, any>
