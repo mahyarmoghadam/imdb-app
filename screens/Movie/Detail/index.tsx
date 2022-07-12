@@ -11,7 +11,7 @@ export default function MovieDetailScreen() {
 
   return (
     <Block color={theme.background} >
-      <ScrollView bounces={false}>
+      <ScrollView bounces={false} showsVerticalScrollIndicator={false}>
         <MovieBackgroundImageComponent />
 
         <MovieDetailComponent />

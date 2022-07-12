@@ -14,7 +14,7 @@ export default function MovieTrailerComponent() {
         </Text>
       </Block>
 
-      <Block row paddingVertical={15}>
+      <Block row paddingVertical={15} >
         <Image
           style={styles.imageContainer}
           source={{

@@ -22,7 +22,6 @@ export default function MovieBackgroundImageComponent() {
         </LinearGradient>
       </ImageBackground>
 
-
       <Block style={styles.textContainer}>
         <Block row space="between">
           <Text

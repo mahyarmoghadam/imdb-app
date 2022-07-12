@@ -12,7 +12,7 @@ export default function MovieDetailComponent() {
   const theme = useTheme();
 
   return (
-    <Block  color={theme.background}>
+    <Block color={theme.background}>
       <Block row paddingHorizontal={15}>
         <TagComponent tagName="Epic" />
         <TagComponent tagName="Fantasy" />

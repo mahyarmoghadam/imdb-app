@@ -10,7 +10,7 @@ export default function MovieCastComponent() {
   const renderContent = ({ item }: any) => {
     return (
       <Block paddingHorizontal={7} paddingVertical={20} color={theme.background}>
-        <Block>
+        <Block >
           <Image style={styles.imageContainer} source={item.image} />
           <Text
             size={12}
@@ -26,14 +26,14 @@ export default function MovieCastComponent() {
   };
 
   return (
-    <Block paddingVertical={20} color={theme.background} >
+    <Block  paddingVertical={20} color={theme.background} >
       <Block row space="between" paddingHorizontal={15}>
         <Text size={18} color={theme.secondaryTextColor}>
           Cast
         </Text>
       </Block>
       
-      <Block>
+      <Block shadow={true}>
         <FlatList
           data={fakeCast}
           renderItem={(item) => renderContent(item)}
@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     width: 100,
     height: 100,
-    borderRadius: 5,
+    borderRadius: 4,
+
   },
 });

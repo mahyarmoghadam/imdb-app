@@ -10,17 +10,17 @@ export interface TagProps {
 export default function TagComponent({ tagName }: TagProps) {
   const theme = useTheme();
   return (
-    <Block  noflex style={styles.container} color={theme.tags}>
-      <Text color={theme.text}>{tagName}</Text>
+    <Block noflex style={styles.container} color={theme.tags}>
+      <Text color={theme.boxText}>{tagName}</Text>
     </Block>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal:20,
-    paddingVertical:5,
-    borderRadius:5,
-    marginHorizontal:2
+    paddingHorizontal: 20,
+    paddingVertical: 5,
+    borderRadius: 5,
+    marginHorizontal: 2
   },
 });
