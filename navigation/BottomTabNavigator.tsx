@@ -25,7 +25,7 @@ function BottomTabNavigator() {
           borderTopStartRadius: 10,
           borderTopEndRadius: 10,
           height: 60,
-          backgroundColor: theme.textInput,
+          backgroundColor: theme.box,
           borderTopWidth: 0
         },
       }}

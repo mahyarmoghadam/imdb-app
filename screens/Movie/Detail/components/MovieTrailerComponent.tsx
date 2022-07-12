@@ -7,7 +7,7 @@ export default function MovieTrailerComponent() {
   const theme = useTheme();
   
   return (
-    <Block paddingHorizontal={15} style={styles.container} color={theme.background}>
+    <Block shadow={true} paddingHorizontal={15} style={styles.container} color={theme.background}>
       <Block row space="between">
         <Text size={18} color={theme.secondaryTextColor}>
           Trailer

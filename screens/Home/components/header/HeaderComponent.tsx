@@ -8,9 +8,9 @@ export default function HeaderComponent() {
   const theme = useTheme();
 
   return (
-    <Block>
-      <Block marginTop={20} style={styles.container} row>
-        <Block>
+    <Block color={theme.box}>
+      <Block  style={styles.container} row> 
+       <Block>
           <Text size={24} weight={"600"} color={theme.textColor}>
             Hi, Emran
           </Text>
@@ -25,14 +25,15 @@ export default function HeaderComponent() {
         </Block>
       </Block>
 
-      <SearchComponent />
+      {/* <SearchComponent /> */}
     </Block>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    padding: 10,
+    
     justifyContent: "center",
     alignItems: "center",
   },

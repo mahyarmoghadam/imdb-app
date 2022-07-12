@@ -1,6 +1,7 @@
 export default interface Theme {
   text: string;
   background: string;
+  box:string;
   tags:string;
   tint: string;
   tabIconDefault: string;

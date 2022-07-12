@@ -9,13 +9,17 @@ import GenresItem from "./GenresItem";
 export default function HomeGenres() {
   const theme = useTheme();
   return (
-    <Block>
+    <Block >
       <WidgetTitle title="Genres" />
-      <FlatList
-        data={fakeGenres}
-        horizontal
-        renderItem={({item}) => <GenresItem item={item} />}
-      />
+
+      <Block >
+        <FlatList
+          data={fakeGenres}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item }) => <GenresItem item={item} />}
+        />
+      </Block>
     </Block>
   );
 }

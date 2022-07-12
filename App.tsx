@@ -27,7 +27,7 @@ export default function App() {
         <QueryClientProvider client={queryClient}>
           <StatusBarContextProvider>
             <NativeBaseProvider>
-              <Block noflex height={20} color={theme.background}></Block>
+              {/* <Block noflex height={20} color={theme.background}></Block> */}
               <Navigation colorScheme={colorScheme} />
             </NativeBaseProvider>
           </StatusBarContextProvider>

@@ -11,7 +11,7 @@ export default function GenresItem({ item }: GenresItemProps) {
   const theme = useTheme();
 
   return (
-    <Block paddingRight={20}>
+    <Block paddingHorizontal={10}>
       <Block>
         <Image style={styles.imageContainer} source={item.image} />
       </Block>
@@ -28,6 +28,6 @@ const styles = StyleSheet.create({
   imageContainer: {
     width: 175,
     height: 125,
-    borderRadius: 15,
+    borderRadius: 8,
   },
 });
