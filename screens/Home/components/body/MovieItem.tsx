@@ -5,9 +5,11 @@ import { Block, Text } from "expo-ui-kit";
 import { StyleSheet, Image, TouchableWithoutFeedback } from "react-native";
 import { useTheme } from "@hooks";
 import { RootStackParamList } from "types";
+import { MoviePopularItem } from "@models";
+import { getImageUrl } from "../../../../config";
 
 export interface MovieItemProps {
-  item: any;
+  item: MoviePopularItem;
 }
 
 export default function MovieItem({ item }: MovieItemProps) {
@@ -22,21 +24,21 @@ export default function MovieItem({ item }: MovieItemProps) {
     >
       <Block paddingVertical={20} paddingRight={20}>
         <Block>
-          <Image style={styles.imageContainer} source={item.image} />
+          <Image style={styles.imageContainer} source={{ uri: getImageUrl(item.poster_path) }} />
         </Block>
         <Block row space="between">
           <Text weight={"800"} paddingTop={10} color={theme.secondaryTextColor}>
-            {item.movieName}
+            {item.title}
           </Text>
           <Text weight={"800"} paddingTop={10} color={theme.secondaryTextColor}>
-            {item.rate}
+            {item.vote_average}
             <AntDesign name="star" size={18} color={theme.ratingColor} />
           </Text>
         </Block>
 
         <Block>
           <Text weight={"600"} color={theme.textColor}>
-            {item.releaseYear}
+            {item.release_date}
           </Text>
         </Block>
       </Block>
