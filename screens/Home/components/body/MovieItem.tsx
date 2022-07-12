@@ -5,11 +5,11 @@ import { Block, Text } from "expo-ui-kit";
 import { StyleSheet, Image, TouchableWithoutFeedback } from "react-native";
 import { useTheme } from "@hooks";
 import { RootStackParamList } from "types";
-import { MoviePopularItem } from "@models";
+import { MovieInfo } from "@models";
 import { getImageUrl } from "../../../../config";
 
 export interface MovieItemProps {
-  item: MoviePopularItem;
+  item: MovieInfo;
 }
 
 export default function MovieItem({ item }: MovieItemProps) {

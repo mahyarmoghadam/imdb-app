@@ -10,9 +10,9 @@ import { MovieDetail } from "./movies/MovieDetail";
 import { MovieImages } from "./movies/MovieImages";
 
 import { MovieList } from './movies/MovieList'
-import { MoviePopular, MoviePopularItem } from "./movies/MoviePopular";
+import { MoviePopular } from "./movies/MoviePopular";
 import { MovieReviews } from "./movies/MovieReviews";
-import { MovieTopRated } from "./movies/MovieTopRated";
+import { MovieInfo, MovieTopRated } from "./movies/MovieTopRated";
 import { MovieVideos } from "./movies/MovieVideo";
 import { PopularPeopleResult } from "./people/PopularPeople";
 
@@ -30,6 +30,6 @@ export {
   MovieDetail,
   MovieTopRated,
   MoviePopular,
-  MoviePopularItem,
+  MovieInfo,
   PopularPeopleResult,
 };
