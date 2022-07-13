@@ -6,27 +6,30 @@ import { SIZES } from "@constants";
 import HomePopular from "./HomePopular";
 import HomeFavoritePeople from "./HomeFavoritePeople";
 import HomeGenres from "./HomeGenres";
+import { useTheme } from "@hooks";
 
 export default function HomeBody() {
-  return (
-    <Block paddingLeft={SIZES.small_padding}>
-      <Block >
-        <HomeBannerComponent />
-      </Block>
+  const theme = useTheme();
 
-      <Block>
+  return (
+    <Block >
+      {/* <Block color={theme.box}>
+        <HomeBannerComponent />
+      </Block> */}
+
+      <Block color={theme.box} marginVertical={10}>
         <HomePopular />
       </Block>
 
-      <Block>
+      <Block color={theme.box} marginVertical={10}>
         <HomeGenres />
       </Block>
 
-      <Block>
+      <Block color={theme.box} marginVertical={10}>
         <HomeTopMovie />
       </Block>
 
-      <Block>
+      <Block color={theme.box} marginVertical={10}>
         <HomeFavoritePeople/>
       </Block>
     </Block>

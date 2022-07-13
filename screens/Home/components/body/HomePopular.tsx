@@ -14,7 +14,8 @@ export default function HomePopular() {
       <FlatList
         data={data?.data?.results}
         horizontal
-        renderItem={({ item }) => <MovieItem item={item} />}
+        renderItem={({item}) => <MovieItem item={item} />}
+        showsHorizontalScrollIndicator={false}
       />
     </Block>
   );

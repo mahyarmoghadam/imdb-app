@@ -9,8 +9,8 @@ export default function MovieCastComponent() {
 
   const renderContent = ({ item }: any) => {
     return (
-      <Block paddingRight={15} paddingVertical={20} color={'#201921'}>
-        <Block>
+      <Block paddingHorizontal={7} paddingVertical={20} color={theme.background}>
+        <Block >
           <Image style={styles.imageContainer} source={item.image} />
           <Text
             size={12}
@@ -26,19 +26,21 @@ export default function MovieCastComponent() {
   };
 
   return (
-    <Block paddingRight={15} paddingVertical={20} color={'#201921'} >
-      <Block row space="between">
+    <Block  paddingVertical={20} color={theme.background} >
+      <Block row space="between" paddingHorizontal={15}>
         <Text size={18} color={theme.secondaryTextColor}>
           Cast
         </Text>
       </Block>
-
-      <FlatList
-        data={fakeCast}
-        renderItem={(item) => renderContent(item)}
-        showsHorizontalScrollIndicator={false}
-        horizontal
-      />
+      
+      <Block shadow={true}>
+        <FlatList
+          data={fakeCast}
+          renderItem={(item) => renderContent(item)}
+          showsHorizontalScrollIndicator={false}
+          horizontal
+        />
+      </Block>
     </Block>
   );
 }
@@ -48,6 +50,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     width: 100,
     height: 100,
-    borderRadius: 15,
+    borderRadius: 4,
+
   },
 });

@@ -10,7 +10,7 @@ export default function MovieCommentListComponent() {
 
   const renderContent = ({ item }: any) => {
     return (
-      <Block width={300} height={150} color={'#403347'} radius={10} paddingVertical={20} paddingRight={20}
+      <Block width={300} height={150} color={theme.background} radius={10} paddingVertical={20} paddingRight={20}
         shadow={true} marginRight={10}>
         <Block row paddingHorizontal={15}>
           <Image

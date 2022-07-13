@@ -11,7 +11,7 @@ export interface WidgetTitleProps {
 export default function WidgetTitle({ title, onPress }: WidgetTitleProps) {
   const theme = useTheme();
   return (
-    <Block row space="between" paddingVertical={10}>
+    <Block paddingLeft={15} row space="between" paddingVertical={10}>
       <Text size={18} color={theme.textColor}>
         {title}
       </Text>

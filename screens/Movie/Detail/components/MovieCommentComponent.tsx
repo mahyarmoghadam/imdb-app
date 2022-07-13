@@ -7,8 +7,8 @@ export default function MovieCommentComponent() {
   const theme = useTheme();
 
   return (
-    <Block paddingRight={15} paddingVertical={20} color={'#201921'} >
-      <Block row space="between">
+    <Block  paddingVertical={20} color={theme.background} >
+      <Block paddingLeft={15} row space="between">
         <Text size={18} color={theme.secondaryTextColor}>
           Comments
         </Text>

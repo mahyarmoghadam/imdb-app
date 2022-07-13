@@ -22,7 +22,7 @@ export default function MovieItem({ item }: MovieItemProps) {
     <TouchableWithoutFeedback
       onPress={() => navigation.navigate("MovieDetail")}
     >
-      <Block paddingVertical={20} paddingRight={20}>
+      <Block paddingLeft={15} style={styles.boxContainer} paddingVertical={20} paddingRight={20}>
         <Block>
           <Image style={styles.imageContainer} source={{ uri: getImageUrl(item.poster_path) }} />
         </Block>
@@ -50,6 +50,14 @@ const styles = StyleSheet.create({
   imageContainer: {
     width: 175,
     height: 200,
-    borderRadius: 20,
+    borderRadius: 5,
   },
+  boxContainer: {
+    shadowColor: '#000',
+    shadowOpacity: 0.09,
+    shadowOffset: {
+      width: 0,
+      height: 5
+    }
+  }
 });

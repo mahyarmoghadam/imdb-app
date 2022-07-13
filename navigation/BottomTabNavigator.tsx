@@ -9,8 +9,6 @@ import React from "react";
 import HomeScreen from "../screens/Home";
 import ProfileScreen from "../screens/Profile";
 import { RootTabParamList, RootTabScreenProps } from "../types";
-import PosterScreen from "../screens/Movie/Poster/index";
-
 
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
@@ -27,7 +25,7 @@ function BottomTabNavigator() {
           borderTopStartRadius: 10,
           borderTopEndRadius: 10,
           height: 60,
-          backgroundColor: theme.textInput,
+          backgroundColor: theme.box,
           borderTopWidth: 0
         },
       }}

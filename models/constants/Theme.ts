@@ -1,13 +1,18 @@
 export default interface Theme {
   text: string;
   background: string;
+  box:string;
+  tags:string;
   tint: string;
   tabIconDefault: string;
   tabIconSelected: string;
-  textColor: string;
-  secondaryTextColor: string;
   linkColor: string;
   textInput: string;
   navigationIconColor: string;
   ratingColor: string;
+  //Text
+  textColor: string;
+  boxText:string;
+  secondaryTextColor: string;
+  
 }

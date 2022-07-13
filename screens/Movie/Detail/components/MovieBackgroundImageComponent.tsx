@@ -2,24 +2,25 @@ import { AntDesign } from "@expo/vector-icons";
 import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
-import { StyleSheet, Image } from "react-native";
+import { StyleSheet, Image, ImageBackground } from "react-native";
 import { Layout } from "@constants";
+import { LinearGradient } from "expo-linear-gradient";
 const _HEIGHT_IMAGE = Layout.window.height / 1.5;
 
 export default function MovieBackgroundImageComponent() {
   const theme = useTheme();
 
   return (
-    <Block height={_HEIGHT_IMAGE}>
-      <Image
-        resizeMode="stretch"
-        style={styles.imageContainer}
-        source={{
-          uri: "https://i.pinimg.com/736x/10/17/d6/1017d65e8ce5f87675b63e8667053e98.jpg",
-        }}
-      />
-
-      <Block noflex style={styles.shadowContainer}></Block>
+    <Block height={_HEIGHT_IMAGE -5}>
+      <ImageBackground
+        style={{ width: '100%', height: _HEIGHT_IMAGE }}
+        resizeMode={'cover'}
+        source={{ uri: "https://i.pinimg.com/736x/10/17/d6/1017d65e8ce5f87675b63e8667053e98.jpg" }}>
+        <LinearGradient
+          colors={['transparent', '#fff']}
+          style={{ height: '100%', width: '100%' }}>
+        </LinearGradient>
+      </ImageBackground>
 
       <Block style={styles.textContainer}>
         <Block row space="between">
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
   textContainer: {
     paddingHorizontal: 20,
     position: "absolute",
-    top: _HEIGHT_IMAGE - 70,
+    top: _HEIGHT_IMAGE - 100,
     width: "100%",
   },
 
