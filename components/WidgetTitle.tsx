@@ -12,11 +12,11 @@ export default function WidgetTitle({ title, onPress }: WidgetTitleProps) {
   const theme = useTheme();
   return (
     <Block paddingLeft={15} row space="between" paddingVertical={10}>
-      <Text size={18} color={theme.textColor}>
+      <Text size={18} color={theme.textColor} weight={'600'}>
         {title}
       </Text>
       <TouchableWithoutFeedback onPress={onPress}>
-        <Text size={16} color={theme.linkColor} marginRight={SIZES.base}>
+        <Text weight={'600'} size={16} color={theme.linkColor} marginRight={SIZES.base}>
           See all
         </Text>
       </TouchableWithoutFeedback>
