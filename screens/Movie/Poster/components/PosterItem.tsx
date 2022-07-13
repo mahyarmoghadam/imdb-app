@@ -3,8 +3,9 @@ import { Block, Text } from "expo-ui-kit";
 import React from "react";
 import { StyleSheet, Image, Animated } from "react-native";
 import { Layout } from "@constants";
-import { AntDesign } from "@expo/vector-icons";
 import { MovieRate } from "@components";
+import { MovieInfo } from "@models";
+import { getImageUrl } from "../../../../config";
 
 const { width } = Layout.window;
 const { isIOS } = Layout;
@@ -14,7 +15,7 @@ const ITEM_SIZE = isIOS ? width * 0.72 : width * 0.74;
 const EMPTY_ITEM_SIZE = (width - ITEM_SIZE) / 2;
 
 export interface PosterItemProps {
-  item: any;
+  item: MovieInfo;
   index: number;
   scrollX: Animated.Value;
 }
@@ -22,7 +23,7 @@ export interface PosterItemProps {
 export default function PosterItem({ item, index, scrollX }: PosterItemProps) {
   const theme = useTheme();
 
-  if (!item.image) {
+  if (!item.poster_path) {
     return <Block noflex style={{ width: EMPTY_ITEM_SIZE }} />;
   }
 
@@ -50,17 +51,17 @@ export default function PosterItem({ item, index, scrollX }: PosterItemProps) {
           borderRadius: 24,
         }}
       >
-        <Image source={item.image} style={styles.posterImage} />
+        <Image source={{ uri: getImageUrl(item.poster_path) }} style={styles.posterImage} />
         <Text
           size={24}
           weight={"600"}
           color={theme.textColor}
           numberOfLines={1}
         >
-          {item.movieName}
+          {item.title}
         </Text>
 
-        <MovieRate rate={item.rate}/>
+        <MovieRate rate={item.vote_average} />
 
         <Block noflex style={styles.genres}>
           <Block noflex style={styles.genre}>
@@ -68,10 +69,7 @@ export default function PosterItem({ item, index, scrollX }: PosterItemProps) {
           </Block>
         </Block>
         <Text size={12} color={theme.textColor} numberOfLines={3}>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
-          deleniti, aperiam quo quos minus consequatur reiciendis quaerat culpa
-          aliquam delectus impedit sapiente suscipit vero placeat. Expedita
-          praesentium sapiente officiis dolorem?
+          {item.overview}
         </Text>
       </Animated.View>
     </Block>

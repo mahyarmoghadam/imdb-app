@@ -4,12 +4,13 @@ import { FlatList, Animated } from "react-native";
 import { Layout } from "@constants";
 import { LinearGradient } from "expo-linear-gradient";
 import PosterBackDropContent from "./PosterBackDropContent";
+import { MovieInfo } from "@models";
 
 const { width, height } = Layout.window;
 const BACKDROP_HEIGHT = height * 0.65;
 
 export interface PosterBackDropProps {
-  data: any[];
+  data: MovieInfo[];
   scrollX: Animated.Value;
   itemSize: number;
 }

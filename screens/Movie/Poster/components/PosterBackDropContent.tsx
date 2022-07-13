@@ -1,12 +1,14 @@
 import React from "react";
 import { Image, Animated } from "react-native";
 import { Layout } from "@constants";
+import { MovieInfo } from "@models";
+import { getImageUrl } from "../../../../config";
 
 const { width, height } = Layout.window;
 const BACKDROP_HEIGHT = height * 0.65;
 
 export interface PosterBackDropContentProps {
-  item: any;
+  item: MovieInfo;
   index: number;
   scrollX: Animated.Value;
   itemSize: number;
@@ -18,7 +20,7 @@ export default function PosterBackDropContent({
   scrollX,
   itemSize,
 }: PosterBackDropContentProps) {
-  if (!item.image) {
+  if (!item.poster_path) {
     return null;
   }
   const translateX = scrollX.interpolate({
@@ -36,7 +38,7 @@ export default function PosterBackDropContent({
       }}
     >
       <Image
-        source={item.image}
+        source={{ uri: getImageUrl(item.poster_path) }}
         style={{
           width,
           resizeMode: "stretch",
