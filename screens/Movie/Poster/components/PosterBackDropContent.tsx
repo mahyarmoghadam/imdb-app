@@ -38,7 +38,7 @@ export default function PosterBackDropContent({
       }}
     >
       <Image
-        source={{ uri: getImageUrl(item.poster_path) }}
+        source={{ uri: getImageUrl(item.backdrop_path) }}
         style={{
           width,
           resizeMode: "stretch",

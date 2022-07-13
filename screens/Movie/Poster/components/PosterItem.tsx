@@ -79,7 +79,7 @@ export default function PosterItem({ item, index, scrollX }: PosterItemProps) {
 const styles = StyleSheet.create({
   posterImage: {
     width: "100%",
-    height: ITEM_SIZE * 1.2,
+    height: ITEM_SIZE ,
     resizeMode: "stretch",
     borderRadius: 18,
     margin: 0,

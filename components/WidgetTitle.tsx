@@ -16,7 +16,7 @@ export default function WidgetTitle({ title, onPress }: WidgetTitleProps) {
         {title}
       </Text>
       <TouchableWithoutFeedback onPress={onPress}>
-        <Text weight={'600'} size={16} color={theme.linkColor} marginRight={SIZES.base}>
+        <Text size={14} color={theme.linkColor} marginRight={SIZES.base}>
           See all
         </Text>
       </TouchableWithoutFeedback>

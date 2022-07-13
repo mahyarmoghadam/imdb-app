@@ -2,7 +2,6 @@ import { useTheme, useTopRated } from "@hooks";
 import { Block } from "expo-ui-kit";
 import React, { useEffect, useState } from "react";
 import { StatusBar, Platform, Animated } from "react-native";
-import { fakeMovieList } from "@models";
 import { Layout } from "@constants";
 import PosterBackDrop from "./components/PosterBackDrop";
 import PosterItem from "./components/PosterItem";
