@@ -27,9 +27,11 @@ export default function MovieItem({ item }: MovieItemProps) {
           <Image style={styles.imageContainer} source={{ uri: getImageUrl(item.poster_path) }} />
         </Block>
         <Block row space="between">
-          <Text weight={"800"} paddingTop={10} color={theme.secondaryTextColor}>
-            {item.title}
-          </Text>
+          <Block noflex width={125}>
+            <Text numberOfLines={1} weight={"800"} paddingTop={10} color={theme.secondaryTextColor}>
+              {item.title}
+            </Text>
+          </Block>
           <Text weight={"800"} paddingTop={10} color={theme.secondaryTextColor}>
             {item.vote_average}
             <AntDesign name="star" size={18} color={theme.ratingColor} />
@@ -51,6 +53,7 @@ const styles = StyleSheet.create({
     width: 175,
     height: 200,
     borderRadius: 5,
+    resizeMode:'stretch'
   },
   boxContainer: {
     shadowColor: '#000',
