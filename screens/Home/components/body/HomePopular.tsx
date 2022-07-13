@@ -8,14 +8,15 @@ import { usePopular } from "@hooks";
 
 export default function HomePopular() {
   const { data, isFetched } = usePopular();
+  
   return (
     <Block>
       <WidgetTitle title="Popular" />
       <FlatList
-        data={data?.data?.results}
+        data={data?.data?.results }
         horizontal
-        renderItem={({item}) => <MovieItem item={item} />}
         showsHorizontalScrollIndicator={false}
+        renderItem={({item}) => <MovieItem item={item} />}
       />
     </Block>
   );

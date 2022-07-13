@@ -19,8 +19,9 @@ export default function HomeTopMovie() {
       <WidgetTitle title="Top 10" onPress={() => navigation.navigate("Poster")} />
       <FlatList
         data={data?.data?.results}
-        renderItem={({ item }) => <MovieItem item={item} />}
         horizontal
+        showsHorizontalScrollIndicator={false}
+        renderItem={({ item }) => <MovieItem item={item} />}
       />
     </Block>
   );
