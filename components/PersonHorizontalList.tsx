@@ -20,6 +20,7 @@ export default function PersonHorizontalList({
       <WidgetTitle title={title} />
       <FlatList
         data={data}
+        paddingLeft={15}
         renderItem={(item) => renderItem(item)}
         showsHorizontalScrollIndicator={false}
         horizontal
