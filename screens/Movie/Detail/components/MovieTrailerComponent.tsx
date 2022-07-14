@@ -1,11 +1,17 @@
 import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
+import { useMovieVideos } from "@hooks";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
 
-export default function MovieTrailerComponent() {
+export interface MovieTrailerProps {
+  movieId: number;
+}
+
+export default function MovieTrailerComponent({ movieId }: MovieTrailerProps) {
   const theme = useTheme();
-  
+  const { data, isFetched } = useMovieVideos(movieId);
+
   return (
     <Block shadow={true} paddingHorizontal={15} style={styles.container} color={theme.background}>
       <Block row space="between">

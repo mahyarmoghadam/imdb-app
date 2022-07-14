@@ -20,6 +20,7 @@ export default function HomeTopMovie() {
       <FlatList
         data={data?.data?.results}
         horizontal
+        paddingLeft={15}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => <MovieItem item={item} />}
       />

@@ -13,6 +13,7 @@ export default function HomePopular() {
       <WidgetTitle title="Popular" />
       <FlatList
         data={data?.data?.results}
+        paddingLeft={15}
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => <MovieItem item={item} />}

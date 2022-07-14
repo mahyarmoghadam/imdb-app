@@ -5,6 +5,7 @@ import {
   useMovieCredits,
   useMovieDetail,
   useMovieList,
+  useMovieVideos,
   usePopular,
   useTopRated,
 } from "./Movie/MovieHook";
@@ -20,4 +21,5 @@ export {
   useTopRated,
   useMovieDetail,
   useMovieCredits,
+  useMovieVideos,
 };
