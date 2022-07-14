@@ -1,10 +1,11 @@
 import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
-import { FlatList, StyleSheet, Image } from "react-native";
+import {  StyleSheet, Image } from "react-native";
 import { fakeCast, MovieCast } from "@models";
 import { useMovieCredits } from "@hooks";
 import { getImageUrl } from "../../../../config";
+import { FlatList } from "native-base";
 
 export interface MovieCastProps {
   movieId: number
@@ -12,7 +13,6 @@ export interface MovieCastProps {
 
 export default function MovieCastComponent({ movieId }: MovieCastProps) {
   const theme = useTheme();
-
   const { data, isFetched } = useMovieCredits(movieId);
 
   const renderContent = (item: MovieCast) => {
@@ -44,6 +44,7 @@ export default function MovieCastComponent({ movieId }: MovieCastProps) {
             renderItem={({ item }) => renderContent(item)}
             showsHorizontalScrollIndicator={false}
             horizontal
+            paddingLeft={15}
           />
         </Block>
       </Block>}

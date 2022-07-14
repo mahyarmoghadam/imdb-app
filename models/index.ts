@@ -13,7 +13,7 @@ import { MovieList } from "./movies/MovieList";
 import { MoviePopular } from "./movies/MoviePopular";
 import { MovieReviews } from "./movies/MovieReviews";
 import { MovieInfo, MovieTopRated } from "./movies/MovieTopRated";
-import { MovieVideos } from "./movies/MovieVideo";
+import { MovieVideo, MovieVideos } from "./movies/MovieVideo";
 import {
   PeopleInfo,
   PopularPeople,
@@ -31,6 +31,7 @@ export {
   MovieCast,
   MovieCrew,
   MovieVideos,
+  MovieVideo,
   MovieReviews,
   MovieImages,
   MovieDetail,
