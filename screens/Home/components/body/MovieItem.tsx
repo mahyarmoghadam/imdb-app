@@ -20,7 +20,7 @@ export default function MovieItem({ item }: MovieItemProps) {
 
   return (
     <TouchableWithoutFeedback
-      onPress={() => navigation.navigate("MovieDetail")}
+      onPress={() => navigation.navigate("MovieDetail", { movieId: item.id })}
     >
       <Block paddingLeft={15} style={styles.boxContainer} paddingVertical={20} paddingRight={20}>
         <Block>
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     width: 175,
     height: 200,
     borderRadius: 5,
-    resizeMode:'stretch'
+    resizeMode: 'stretch'
   },
   boxContainer: {
     shadowColor: '#000',
