@@ -18,6 +18,7 @@ export default {
     navigationIconColor:"#ff5524",
     ratingColor: "#ffcc66",
     tags:'#EC994B',
+    rate:'#EC994B',
     boxText:'#fff'
   } as Theme,
   dark: {
@@ -34,6 +35,7 @@ export default {
     navigationIconColor:"#ff5524",
     ratingColor: "#ffcc66",
     tags:'#EC994B',
+    rate:'#EC994B',
     boxText:'#fff'
   } as Theme,
 
