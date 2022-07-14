@@ -5,46 +5,51 @@ import React from "react";
 import { StyleSheet, Image, ImageBackground } from "react-native";
 import { Layout } from "@constants";
 import { LinearGradient } from "expo-linear-gradient";
-const _HEIGHT_IMAGE = Layout.window.height / 1.5;
+import { MovieDetail } from "@models";
+import { getImageUrl } from "../../../../config";
+const _HEIGHT_IMAGE = Layout.window.height / 2.5;
 
-export default function MovieBackgroundImageComponent() {
+export interface MovieBackgroundImageProps {
+  data: MovieDetail
+}
+
+export default function MovieBackgroundImageComponent({ data }: MovieBackgroundImageProps) {
   const theme = useTheme();
 
   return (
-    <Block height={_HEIGHT_IMAGE -5}>
+    <Block noflex height={_HEIGHT_IMAGE}>
       <ImageBackground
-        style={{ width: '100%', height: _HEIGHT_IMAGE }}
-        resizeMode={'cover'}
-        source={{ uri: "https://i.pinimg.com/736x/10/17/d6/1017d65e8ce5f87675b63e8667053e98.jpg" }}>
+        style={{ width: '100%', height: _HEIGHT_IMAGE + 20 }}
+        resizeMode={'stretch'}
+        source={{ uri: getImageUrl(data?.backdrop_path) }}>
         <LinearGradient
           colors={['transparent', '#fff']}
-          style={{ height: '100%', width: '100%' }}>
+          style={{ height: '105%', width: '100%' }}>
         </LinearGradient>
       </ImageBackground>
 
       <Block style={styles.textContainer}>
-        <Block row space="between">
-          <Text
-            size={24}
-            style={styles.movieNameText}
-            color={theme.secondaryTextColor}
-          >
-            Dune
-          </Text>
-          <Text
-            marginTop={10}
-            style={styles.movieNameText}
-            color={theme.secondaryTextColor}
-          >
-            8.7
-            <AntDesign name="star" size={18} color="#dbb28c" />
-          </Text>
-        </Block>
+        <Block row>
+          <Image source={{ uri: getImageUrl(data.poster_path) }} resizeMode={'stretch'} style={styles.posterImage} />
+          <Block paddingLeft={10} style={styles.movieTitle}>
+            <Block noflex>
+              <Text size={18} style={styles.movieNameText} color={theme.secondaryTextColor}>
+                {data.title}
+              </Text>
+            </Block>
+            <Block row noflex style={styles.movieTitle} marginTop={5} space={'between'}>
+              <Block>
+                <Text style={styles.releaseYearText} color={theme.textColor}>
+                  {data?.release_date}
+                </Text>
+              </Block>
 
-        <Block marginTop={5}>
-          <Text style={styles.releaseYearText} color={theme.textColor}>
-            2021, Dennis Villeneuve
-          </Text>
+              <Text style={styles.releaseYearText} color={theme.textColor}>
+                {data.vote_average}
+                <AntDesign name="star" size={18} color={theme.rate} />
+              </Text>
+            </Block>
+          </Block>
         </Block>
       </Block>
     </Block>
@@ -69,7 +74,7 @@ const styles = StyleSheet.create({
   textContainer: {
     paddingHorizontal: 20,
     position: "absolute",
-    top: _HEIGHT_IMAGE - 100,
+    top: _HEIGHT_IMAGE - 140,
     width: "100%",
   },
 
@@ -81,4 +86,15 @@ const styles = StyleSheet.create({
   releaseYearText: {
     fontWeight: "600",
   },
+
+  posterImage: {
+    width: 100,
+    height: 130,
+    borderRadius: 7
+  },
+
+  movieTitle: {
+    justifyContent: 'flex-end',
+    alignItems: 'flex-start'
+  }
 });
