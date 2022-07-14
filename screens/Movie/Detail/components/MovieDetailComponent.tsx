@@ -30,7 +30,7 @@ export default function MovieDetailComponent({ data }: MovieDetailProps) {
         </Text>
       </Block>
 
-      <MovieCastComponent />
+      <MovieCastComponent movieId={data.id} />
 
       <MovieTrailerComponent />
 
