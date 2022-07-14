@@ -1,4 +1,4 @@
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Ionicons } from "@expo/vector-icons";
 import { useTheme } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
@@ -7,6 +7,10 @@ import { Layout } from "@constants";
 import { LinearGradient } from "expo-linear-gradient";
 import { MovieDetail } from "@models";
 import { getImageUrl } from "../../../../config";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from '@react-navigation/native';
+import { NavigationProp } from '@react-navigation/native';
+import { RootStackParamList } from "../../../../types";
 const _HEIGHT_IMAGE = Layout.window.height / 2.5;
 
 export interface MovieBackgroundImageProps {
@@ -15,9 +19,15 @@ export interface MovieBackgroundImageProps {
 
 export default function MovieBackgroundImageComponent({ data }: MovieBackgroundImageProps) {
   const theme = useTheme();
+  const navigation = useNavigation<NavigationProp<RootStackParamList,"MovieDetail">>();
 
   return (
     <Block noflex height={_HEIGHT_IMAGE}>
+      <Block noflex style={styles.backIcon}>
+        <TouchableOpacity onPress={()=> navigation.goBack()}>
+          <Ionicons size={30} color='#fff' name="ios-chevron-back-sharp" />
+        </TouchableOpacity>
+      </Block>
       <ImageBackground
         style={{ width: '100%', height: _HEIGHT_IMAGE + 20 }}
         resizeMode={'stretch'}
@@ -96,5 +106,11 @@ const styles = StyleSheet.create({
   movieTitle: {
     justifyContent: 'flex-end',
     alignItems: 'flex-start'
+  },
+  backIcon: {
+    position: 'absolute',
+    top: 25,
+    left: 10,
+    zIndex: 10
   }
 });
