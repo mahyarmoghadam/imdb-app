@@ -2,10 +2,11 @@ import React from "react";
 import { Block } from "expo-ui-kit";
 import WidgetTitle from "./WidgetTitle";
 import { FlatList } from "native-base";
+import {  PopularPeople } from "@models";
 
 export interface PersonHorizontalListProps {
   title: string;
-  data: any[];
+  data: PopularPeople[];
   renderItem: (item: any) => JSX.Element;
 }
 

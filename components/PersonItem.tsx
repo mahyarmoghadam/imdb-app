@@ -1,9 +1,11 @@
+import { PeopleInfo, PopularPeople } from "@models";
+import { getImageUrl } from "../config";
 import { Block } from "expo-ui-kit";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
 
 export interface PersonItemProps {
-  item: any;
+  item: PopularPeople;
   isCircle: boolean;
 }
 
@@ -14,7 +16,7 @@ export default function PersonItem({ item, isCircle }: PersonItemProps) {
         <Image
           style={styles.imageContainer}
           borderRadius={isCircle ? 50 : 10}
-          source={item.image}
+          source={{uri: getImageUrl(item.profile_path)}}
         />
       </Block>
     </Block>

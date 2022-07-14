@@ -14,7 +14,7 @@ import { MoviePopular } from "./movies/MoviePopular";
 import { MovieReviews } from "./movies/MovieReviews";
 import { MovieInfo, MovieTopRated } from "./movies/MovieTopRated";
 import { MovieVideos } from "./movies/MovieVideo";
-import { PopularPeopleResult } from "./people/PopularPeople";
+import { PeopleInfo, PopularPeople, PopularPeopleResult } from "./people/PopularPeople";
 
 export {
   fakeCast,
@@ -32,4 +32,6 @@ export {
   MoviePopular,
   MovieInfo,
   PopularPeopleResult,
+  PopularPeople,
+  PeopleInfo,
 };
