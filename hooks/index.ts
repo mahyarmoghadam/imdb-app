@@ -2,6 +2,7 @@ import useTheme from "./useTheme";
 import useColorScheme from "./useColorScheme";
 import useCachedResources from "./useCachedResources";
 import {
+  useMovieCredits,
   useMovieDetail,
   useMovieList,
   usePopular,
@@ -18,4 +19,5 @@ export {
   usePopular,
   useTopRated,
   useMovieDetail,
+  useMovieCredits,
 };
