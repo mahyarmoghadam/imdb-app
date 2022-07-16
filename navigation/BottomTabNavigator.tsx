@@ -6,6 +6,7 @@ import {
 import { useTheme } from "@hooks";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
+import ExploreScreen from "../screens/Explore";
 import HomeScreen from "../screens/Home";
 import ProfileScreen from "../screens/Profile";
 import { RootTabParamList, RootTabScreenProps } from "../types";
@@ -48,7 +49,7 @@ function BottomTabNavigator() {
 
       <BottomTab.Screen
         name="Explore"
-        component={HomeScreen}
+        component={ExploreScreen}
         options={({ navigation }: RootTabScreenProps<"Explore">) => ({
           title: "Home",
           tabBarIcon: ({ focused }) => (
