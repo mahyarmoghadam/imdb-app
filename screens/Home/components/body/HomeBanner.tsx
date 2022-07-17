@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Block } from "expo-ui-kit";
 import { WidgetTitle } from "@components";
-import { FlatList } from "native-base";
-import { banners, fakeGenres } from "@models";
+import { fakeGenres } from "@models";
 import { HomeBannerItem } from "@home-components";
 import { Animated, Platform } from "react-native";
 import { Layout } from "@constants";
@@ -22,7 +21,7 @@ export default function HomeBannerComponent() {
 
   return (
     <Block>
-      <WidgetTitle title="For You" />
+      <WidgetTitle title="Your Collection" />
 
       <Animated.FlatList
         showsHorizontalScrollIndicator={false}

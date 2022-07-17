@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Block } from "expo-ui-kit";
 import { WidgetTitle } from "@components";
 import { FlatList } from "native-base";
 import { MovieItem } from "@home-components";
-import { usePopular } from "@hooks";
+import { useMovieList, usePopular } from "@hooks";
 
 export default function HomePopular() {
   const { data, isFetched } = usePopular();
+  const {data:ss } = useMovieList(440);
 
+  useEffect(() => {
+    console.log(data?.data?.results[0])
+  }, [data])
+  
   return (
     <Block>
       <WidgetTitle title="Popular" />

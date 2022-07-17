@@ -34,23 +34,22 @@ export default function HomeBannerItem({
     index * ITEM_SIZE,
   ];
 
-  const translateY = scrollX.interpolate({
+  const opacity = scrollX.interpolate({
     inputRange,
-    outputRange: [50, 5, 50],
+    outputRange: [.5, 1, .5],
     extrapolate: "clamp",
   });
 
   return (
-    <Block noflex width={ITEM_SIZE}>
+    <Block noflex width={ITEM_SIZE} paddingVertical={20}>
       <Animated.View
         style={{
           marginHorizontal: SPACING,
           padding: SPACING * 1.2,
-
           alignItems: "center",
-          transform: [{ translateY }],
-          backgroundColor: theme.background,
-          borderRadius: 24,
+          opacity: opacity,
+          backgroundColor: theme.box,
+          borderRadius: 5,
         }}
       >
         <Image source={item.image} style={styles.imageContainer} />
@@ -58,6 +57,7 @@ export default function HomeBannerItem({
           size={24}
           weight={"600"}
           color={theme.textColor}
+          marginBottom={10}
           numberOfLines={1}
         >
           {item.movieName}
@@ -70,10 +70,9 @@ export default function HomeBannerItem({
 const styles = StyleSheet.create({
   imageContainer: {
     width: "100%",
-
     height: ITEM_SIZE * 0.8,
     resizeMode: "stretch",
-    borderRadius: 18,
+    borderRadius: 5,
     margin: 0,
     marginBottom: 10,
   },

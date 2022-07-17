@@ -1,13 +1,11 @@
 import { useTheme } from "@hooks";
-import { Block } from "expo-ui-kit";
 import { NativeBaseProvider } from "native-base";
-import React, { useContext, useEffect } from "react";
+import React, {  } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { QueryClient, QueryClientProvider } from "react-query";
-
 import useCachedResources from "./hooks/useCachedResources";
 import useColorScheme from "./hooks/useColorScheme";
-import StatusBarContextProvider, { StatusBarContext } from "./hooks/useStatusBarContextProvider";
+import StatusBarContextProvider from "./hooks/useStatusBarContextProvider";
 import Navigation from "./navigation";
 
 const queryClient = new QueryClient();
