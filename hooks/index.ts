@@ -10,6 +10,7 @@ import {
   useTopRated,
 } from "./Movie/MovieHook";
 import { usePopularPeople } from "./People/PeopleHook";
+import { useAccountProfile } from "./Account/AccountHook";
 
 export {
   useTheme,
@@ -22,4 +23,5 @@ export {
   useMovieDetail,
   useMovieCredits,
   useMovieVideos,
+  useAccountProfile
 };

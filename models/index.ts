@@ -1,3 +1,5 @@
+import { RequestTokenResultModel } from "./account/autentication";
+import { ProfileModel } from "./account/profile";
 import {
   fakeCast,
   banners,
@@ -26,6 +28,7 @@ export {
   fakeGenres,
   fakeMovieList,
   profileActivity,
+  //Movie
   MovieList,
   MovieCredits,
   MovieCast,
@@ -38,7 +41,11 @@ export {
   MovieTopRated,
   MoviePopular,
   MovieInfo,
+  //People
   PopularPeopleResult,
   PopularPeople,
   PeopleInfo,
+  //Account
+  ProfileModel,
+  RequestTokenResultModel
 };

@@ -1,5 +1,8 @@
 export enum QueryKeys {
 
+    //Account
+    AccountRequestToken = "RequestToken",
+
     // Movie
     MovieList = "MovieList",
     MovieDetail = "MovieDetail",
