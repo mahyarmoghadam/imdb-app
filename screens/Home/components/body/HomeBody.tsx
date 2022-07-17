@@ -13,7 +13,7 @@ export default function HomeBody() {
 
   return (
     <Block >
-      <Block color={theme.box}>
+      <Block color={theme.box} marginVertical={10}>
         <HomeBannerComponent />
       </Block>
 
