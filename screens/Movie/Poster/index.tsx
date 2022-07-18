@@ -1,8 +1,7 @@
-import { useTheme } from "@hooks";
+import { useTheme, useTopRated } from "@hooks";
 import { Block } from "expo-ui-kit";
 import React, { useEffect, useState } from "react";
 import { StatusBar, Platform, Animated } from "react-native";
-import { fakeMovieList } from "@models";
 import { Layout } from "@constants";
 import PosterBackDrop from "./components/PosterBackDrop";
 import PosterItem from "./components/PosterItem";
@@ -13,11 +12,13 @@ const ITEM_SIZE = Platform.OS === "ios" ? width * 0.72 : width * 0.74;
 export default function PosterScreen() {
   const theme = useTheme();
   const scrollX = React.useRef(new Animated.Value(0)).current;
+  const { data, isFetched } = useTopRated();
   const [movies, setMovies] = useState<any>();
 
+
   useEffect(() => {
-    setMovies([{ id: "empty-left" }, ...fakeMovieList, { id: "empty-right" }]);
-  }, []);
+    setMovies([{ id: "empty-left" }, ...data?.data?.results ?? [], { id: "empty-right" }]);
+  }, [isFetched]);
 
   return (
     <Block color={theme.background}>

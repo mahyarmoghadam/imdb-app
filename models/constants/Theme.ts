@@ -3,6 +3,7 @@ export default interface Theme {
   background: string;
   box:string;
   tags:string;
+  rate:string;
   tint: string;
   tabIconDefault: string;
   tabIconSelected: string;

@@ -18,23 +18,25 @@ export default {
     navigationIconColor:"#ff5524",
     ratingColor: "#ffcc66",
     tags:'#EC994B',
+    rate:'#EC994B',
     boxText:'#fff'
   } as Theme,
   dark: {
-    text: "#fff",
-    background: "#1f1d1b",
+    text: "#000",
+    background: "#F1f1f1",
     box:'#fff',
-    tint: tintColorDark,
+    tint: tintColorLight,
     tabIconDefault: "#ccc",
-    tabIconSelected: tintColorDark,
-    textColor: "#aea8af",
-    secondaryTextColor: "#eae6e8",
-    linkColor: "#402760",
-    navigationIconColor:"#bc9d89",
-    textInput: "#382c3e",
+    tabIconSelected: tintColorLight,
+    textColor: "#3c3c3e",
+    secondaryTextColor: "#3c3c3e",
+    linkColor: "#ff5524",
+    textInput: "#f2f2f3",
+    navigationIconColor:"#ff5524",
+    ratingColor: "#ffcc66",
     tags:'#EC994B',
-    ratingColor: "#dbb28c",
-    boxText:'#000'
+    rate:'#EC994B',
+    boxText:'#fff'
   } as Theme,
 
 };

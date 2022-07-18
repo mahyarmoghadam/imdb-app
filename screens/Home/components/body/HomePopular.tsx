@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Block } from "expo-ui-kit";
-import { fakeMovieList } from "@models";
 import { WidgetTitle } from "@components";
 import { FlatList } from "native-base";
 import { MovieItem } from "@home-components";
+import { useMovieList, usePopular } from "@hooks";
 
 export default function HomePopular() {
+  const { data, isFetched } = usePopular();
+
   return (
     <Block>
       <WidgetTitle title="Popular" />
       <FlatList
-        data={fakeMovieList}
+        data={data?.data?.results}
+        paddingLeft={15}
         horizontal
-        renderItem={({item}) => <MovieItem item={item} />}
         showsHorizontalScrollIndicator={false}
+        renderItem={({ item }) => <MovieItem item={item} />}
       />
     </Block>
   );

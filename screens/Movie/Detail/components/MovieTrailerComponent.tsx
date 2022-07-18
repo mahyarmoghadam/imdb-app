@@ -1,26 +1,35 @@
 import { useTheme } from "@hooks";
-import { Block, Text } from "expo-ui-kit";
-import React from "react";
-import { StyleSheet, Image } from "react-native";
+import { Block, Button, Text } from "expo-ui-kit";
+import { useMovieVideos } from "@hooks";
+import React, { useCallback, useState, useEffect } from "react";
+import { StyleSheet } from "react-native";
+import YoutubePlayer from "react-native-youtube-iframe";
+import { FlatList } from "native-base";
+import MovieTrailerListComponent from "./MovieTrailerListComponent";
 
-export default function MovieTrailerComponent() {
+export interface MovieTrailerProps {
+  movieId: number;
+}
+
+export default function MovieTrailerComponent({ movieId }: MovieTrailerProps) {
   const theme = useTheme();
-  
+  const { data, isFetched } = useMovieVideos(movieId);
+
   return (
-    <Block shadow={true} paddingHorizontal={15} style={styles.container} color={theme.background}>
-      <Block row space="between">
+    <Block shadow={true} style={styles.container} color={theme.background}>
+      <Block row space="between" paddingHorizontal={15}>
         <Text size={18} color={theme.secondaryTextColor}>
           Trailer
         </Text>
       </Block>
 
-      <Block row paddingVertical={15} >
-        <Image
-          style={styles.imageContainer}
-          source={{
-            uri: "https://i.guim.co.uk/img/media/2a9cadadbc853b032cd3ab28f1ca138c11c8431f/89_320_2323_1395/master/2323.jpg?width=465&quality=45&auto=format&fit=max&dpr=2&s=cebd307d4bf78f6fc8c2c54ba828c4cb",
-          }}
-        />
+      <Block  marginTop={10} noflex shadow={true}>
+        <FlatList
+          data={data?.data?.results}
+          horizontal
+          paddingLeft={15}
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item }) => <MovieTrailerListComponent data={item} />} />
       </Block>
     </Block>
   );

@@ -7,8 +7,13 @@ import {
   MovieCastComponent,
   MovieCommentComponent,
 } from "@movie-detail-components";
+import { MovieDetail } from "@models";
 
-export default function MovieDetailComponent() {
+export interface MovieDetailProps {
+  data: MovieDetail
+}
+
+export default function MovieDetailComponent({ data }: MovieDetailProps) {
   const theme = useTheme();
 
   return (
@@ -21,19 +26,13 @@ export default function MovieDetailComponent() {
 
       <Block paddingVertical={15} paddingHorizontal={20}>
         <Text weight={"600"} color={theme.secondaryTextColor} size={12}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni alias
-          quae obcaecati voluptas facilis quia sint explicabo. Illum, eum
-          necessitatibus. Hic odit optio pariatur vero quia aspernatur vel
-          magnam laudantium...
-          <Text color={theme.textColor} size={12}>
-            more
-          </Text>
+          {data.overview}
         </Text>
       </Block>
 
-      <MovieCastComponent />
+      <MovieCastComponent movieId={data.id} />
 
-      <MovieTrailerComponent />
+      <MovieTrailerComponent movieId={data.id} />
 
       <MovieCommentComponent />
     </Block>

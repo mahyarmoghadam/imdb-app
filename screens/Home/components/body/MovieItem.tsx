@@ -5,9 +5,11 @@ import { Block, Text } from "expo-ui-kit";
 import { StyleSheet, Image, TouchableWithoutFeedback } from "react-native";
 import { useTheme } from "@hooks";
 import { RootStackParamList } from "types";
+import { MovieInfo } from "@models";
+import { getImageUrl } from "../../../../config";
 
 export interface MovieItemProps {
-  item: any;
+  item: MovieInfo;
 }
 
 export default function MovieItem({ item }: MovieItemProps) {
@@ -18,25 +20,27 @@ export default function MovieItem({ item }: MovieItemProps) {
 
   return (
     <TouchableWithoutFeedback
-      onPress={() => navigation.navigate("MovieDetail")}
+      onPress={() => navigation.navigate("MovieDetail", { movieId: item.id })}
     >
-      <Block paddingLeft={15} style={styles.boxContainer} paddingVertical={20} paddingRight={20}>
+      <Block style={styles.boxContainer} paddingVertical={20} paddingRight={20}>
         <Block>
-          <Image style={styles.imageContainer} source={item.image} />
+          <Image style={styles.imageContainer} source={{ uri: getImageUrl(item.poster_path) }} />
         </Block>
         <Block row space="between">
+          <Block noflex width={125}>
+            <Text numberOfLines={1} weight={"800"} paddingTop={10} color={theme.secondaryTextColor}>
+              {item.title}
+            </Text>
+          </Block>
           <Text weight={"800"} paddingTop={10} color={theme.secondaryTextColor}>
-            {item.movieName}
-          </Text>
-          <Text weight={"800"} paddingTop={10} color={theme.secondaryTextColor}>
-            {item.rate}
+            {item.vote_average}
             <AntDesign name="star" size={18} color={theme.ratingColor} />
           </Text>
         </Block>
 
         <Block>
           <Text weight={"600"} color={theme.textColor}>
-            {item.releaseYear}
+            {item.release_date}
           </Text>
         </Block>
       </Block>
@@ -49,6 +53,7 @@ const styles = StyleSheet.create({
     width: 175,
     height: 200,
     borderRadius: 5,
+    resizeMode: 'stretch'
   },
   boxContainer: {
     shadowColor: '#000',
