@@ -1,19 +1,21 @@
 import { GenresItem, HomeBannerItem, MovieItem } from "@home-components";
-import { useMovieList, useTheme, useMovieDetail } from "@hooks";
+import { useMovieList, useTheme, useMovieDetail, useSearchMovie } from "@hooks";
 import { Block, Text } from "expo-ui-kit";
 import React from "react";
 import { SearchBarComponent, SectionComponent } from "./components";
 import { FlatList, StyleSheet, View } from 'react-native';
 import HomeGenres from '../Home/components/body/HomeGenres';
 import SectionItemComponent from "./components/SectionItemComponent";
+import { SearchMovieRequest } from '../../models/Search/Movie';
 
 
 
 const fakeMovieList: any[] = [];
 
 export default function ExploreScreen() {
-  const { data, isError, isLoading } = useMovieList(550, 1);
-
+  const request = new SearchMovieRequest();
+  request.query = " ";
+  const { data, isError, isLoading } = useSearchMovie(request);
   const theme = useTheme();
 
   return (
